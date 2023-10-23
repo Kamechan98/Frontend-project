@@ -1,0 +1,14 @@
+$primary-color:#486349;
+$secondary-color:#D8C690;
+$third-color:#CBB26A;
+$white-text:#ffff;
+$black-text: #000000;
+
+.footer {
+    height: 350px;
+    background-color: $primary-color;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+}

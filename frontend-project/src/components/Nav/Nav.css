@@ -1,0 +1,13 @@
+.nav-bar {
+  height: 150px;
+  background-color: #486349;
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-bar {
+    width: 100%;
+    height: 200px;
+  }
+}/*# sourceMappingURL=Nav.css.map */
