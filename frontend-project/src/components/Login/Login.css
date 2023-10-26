@@ -1,0 +1,28 @@
+#login-form {
+  background-color: bisque;
+  height: 200px;
+  width: 80vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 20px;
+  justify-content: center;
+  align-items: flex-start;
+}
+#login-form label {
+  font-size: medium;
+  color: black;
+  display: flex;
+}
+#login-form input {
+  background-color: #fff;
+  border-radius: 5px;
+  height: 30px;
+  width: 80%;
+}
+#login-form .login-btn {
+  height: 40px;
+  width: 100px;
+  display: flex;
+  text-align: center;
+}/*# sourceMappingURL=Login.css.map */

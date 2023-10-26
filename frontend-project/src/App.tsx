@@ -1,6 +1,7 @@
 import React from 'react'
 import Nav from './components/Nav/Nav'
 import Footer from './components/Footer/Footer'
+import Login from './components/Login/Login'
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         where you and your partner can spend some romatic time with each other, whether it be by
         skiing, hiking, or by taking a warm bath or spend an hour in the sauna.
         </p>
+          <Login/>
       </div>
       <Footer/>
     </div>
