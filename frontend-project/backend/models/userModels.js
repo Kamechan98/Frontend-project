@@ -1,9 +1,10 @@
 const User = require('../schemas/userSchemas');
+const bcrypt = require('bcryptjs');
 const { generateToken } = require('../auth/auth');
 
 
 exports.addUser = async (req, res) => {
-    const { firstName, lastName, email, password, created_at } = req.body;
+    const { firstName, lastName, email, password } = req.body;
   
     if(!firstName) res.status(400).json({ message: 'You need to enter a name' });
     if(!lastName) res.status(400).json({ message: 'You need to enter a name' });
@@ -24,7 +25,7 @@ exports.addUser = async (req, res) => {
     res.status(201).json(generateToken(User))
 
 
-    const data = await User.create({ firstName, lastName, email, password, created_at})
+    const data = await User.create({ firstName, lastName, email, password })
     
     
     return   res.status(201).json(data)
@@ -40,15 +41,15 @@ exports.login = async (req, res) => {
     const user = await User.findOne({ email, password });
     if(!user) return res.status(401).json({ message: 'Incorrect credentials' })
   
-    // Comparing entered password with decrypted saved password
-    // const result = await bcrypt.compare(password, User.password);
+    // // Comparing entered password with decrypted saved password
+    // const result = await bcrypt.compare(password, User.passwordHash);
     // if(!result) return res.status(401).json({ message: 'Incorrect credentials' })
   
     // Generating token
-    res.status(200).json(generateToken(User))
+    res.status(200).json(generateToken(user))
     
     
-    res.status(200).json(User)
+    res.status(200).json(user)
 }
   
     // Returning user object

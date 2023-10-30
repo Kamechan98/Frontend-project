@@ -6,10 +6,6 @@ const PORT = process.env.PORT || 8888;
 const SERVER_URI = 'http://localhost:' + PORT
 
 app.listen(PORT, () => console.log('Server running on ' + SERVER_URI));
-
-app.get("/api",(req,res) => {
-  res.send("Active")
-})
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('Connected to database'))
   .catch(err => console.log(err))
