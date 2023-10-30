@@ -5,52 +5,51 @@ const { generateToken } = require('../auth/auth');
 
 exports.addUser = async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
-  
-    if(!firstName) res.status(400).json({ message: 'You need to enter a name' });
-    if(!lastName) res.status(400).json({ message: 'You need to enter a name' });
-    if(!email) res.status(400).json({ message: 'You need to enter an email address' });
-    if(!password) res.status(400).json({ message: 'You need to enter a password' });
-  
-    // // Hashing password
-    // const salt = await bcrypt.genSalt(10);
-    // const hash = await bcrypt.hash(password, salt)
-  
-    // // Creating new user with hashed password on database
-    // const _user = new User({ firstName, lastName, email, passwordHash: hash })
-    // const user = await _user.save()
-  
-    if(!User) res.status(500).json({ message: 'Something went wrong when creating new user' });
-  
-    // Generating token
-    res.status(201).json(generateToken(User))
 
+    if (!firstName || !lastName || !email || !password) {
+        return res.status(400).json({ message: 'Please provide all user details' });
+    }
 
-    const data = await User.create({ firstName, lastName, email, password })
-    
-    
-    return   res.status(201).json(data)
-}
+    try {
+        const salt = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(password, salt);
+
+        const data = await User.create({ firstName, lastName, email, password: hash });
+        return res.status(201).json(data);
+    } catch (err) {
+        return res.status(500).json({ message: 'Error creating a new user' });
+    }
+};
+
 
 exports.login = async (req, res) => {
-  
     const { email, password } = req.body;
-  
-    if(!email || !password) res.status(400).json({ message: 'You need to enter an email address and a password' })
-  
-    // Checking if input email exists as saved user email
-    const user = await User.findOne({ email, password });
-    if(!user) return res.status(401).json({ message: 'Incorrect credentials' })
-  
-    // // Comparing entered password with decrypted saved password
-    // const result = await bcrypt.compare(password, User.passwordHash);
-    // if(!result) return res.status(401).json({ message: 'Incorrect credentials' })
-  
-    // Generating token
-    res.status(200).json(generateToken(user))
-    
-    
-    res.status(200).json(user)
-}
+
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Please enter email and password' });
+    }
+
+    try {
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res.status(401).json({ message: 'Invalid credentials' });
+        }
+
+        const isPasswordValid = await bcrypt.compare(password, user.password);
+
+        if (!isPasswordValid) {
+            return res.status(401).json({ message: 'Invalid credentials' });
+        }
+
+        // Generating and sending token
+        const token = generateToken(user);
+        return res.status(200).json({ token, user });
+    } catch (err) {
+        return res.status(500).json({ message: 'Error in user login' });
+    }
+};
+
   
     // Returning user object
     // res.status(200).json(User)
