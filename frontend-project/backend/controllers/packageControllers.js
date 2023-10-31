@@ -1,10 +1,9 @@
 const router = require('express').Router();
 // const { verifyToken } = require('../auth/auth');
-const { addUser,login } = require('../models/userModels');
+const { addPackage } = require('../models/packageModels');
 
 
 // POST Users
-router.post('/add', addUser);
-router.post('/login', login);
+router.post('/add', addPackage);
 
 module.exports = router;
