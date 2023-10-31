@@ -49,9 +49,4 @@ exports.login = async (req, res) => {
         return res.status(500).json({ message: 'Error in user login' });
     }
 };
-
-  
-    // Returning user object
-    // res.status(200).json(User)
-
   
