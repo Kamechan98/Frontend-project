@@ -1,9 +1,12 @@
 const router = require('express').Router();
 // const { verifyToken } = require('../auth/auth');
-const { addProduct } = require('../models/productModels');
+const { addProduct, getAllProducts, getProductById } = require('../models/productModels');
 
 
-// POST Users
 router.post('/add', addProduct);
+
+router.get('/getproducts', getAllProducts);
+
+router.get('/products/:id', getProductById);
 
 module.exports = router;
