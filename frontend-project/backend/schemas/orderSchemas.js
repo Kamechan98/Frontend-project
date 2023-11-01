@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const orderSchema = mongoose.Schema({
   userId: { type: mongoose.Types.ObjectId, ref: 'User', },
-  package: [{ product: { type: mongoose.Types.ObjectId, ref: 'Package' }}],
+  product: [{ product: { type: mongoose.Types.ObjectId, ref: 'Product' }}],
   bookingDateArrival: { type: Date }, 
   bookingDateDeparture: { type: Date }, 
   guest: {type: Number, required: true},

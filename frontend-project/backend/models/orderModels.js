@@ -9,7 +9,7 @@ exports.addOrder = async (req, res) => {
     }
 
     try {
-        const data = await Product.create({ userId, package, bookingDateArrival, bookingDateDepareture, guest, status: bookingReference });
+        const data = await Order.create({ userId, package, bookingDateArrival, bookingDateDepareture, guest, status: bookingReference });
         return res.status(201).json(data);
     } catch (err) {
         return res.status(500).json({ message: 'Error creating order' });

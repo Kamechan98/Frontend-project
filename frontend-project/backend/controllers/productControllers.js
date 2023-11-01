@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // const { verifyToken } = require('../auth/auth');
-const { addProduct, getAllProducts, getProductById } = require('../models/productModels');
+const { addProduct, getAllProducts, getProductById, updateProduct, deleteProduct } = require('../models/productModels');
 
 //Add a product
 router.post('/add', addProduct);
@@ -9,6 +9,10 @@ router.post('/add', addProduct);
 router.get('/getproducts', getAllProducts);
 
 //Get product by ID
-router.get('/products/:id', getProductById);
+router.get('/:id', getProductById);
+
+router.put('/:id', updateProduct)
+
+router.delete('/:id', deleteProduct)
 
 module.exports = router;
