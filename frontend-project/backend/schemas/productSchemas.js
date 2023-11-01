@@ -6,7 +6,7 @@ const productSchema = mongoose.Schema({
     package: {
       type: String,
       enum: ['Budget', 'Standard', 'Deluxe'],
-      default: 'Budget', // You can set a default value if needed
+      default: 'Budget',
       required: true
   },
     location: {type: String, required: true },

@@ -13,7 +13,7 @@ app.use('/api/users', require('./controllers/userControllers'));
 app.use('/api/products', require('./controllers/productControllers'));
 
 //Product packages
-// app.use('/api/packages', require('./controllers/packageControllers'));
+app.use('/api/packages', require('./controllers/packageControllers'));
 
 //Orders
 app.use('/api/orders', require('./controllers/orderControllers'));
