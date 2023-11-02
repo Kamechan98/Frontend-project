@@ -1,17 +1,26 @@
 const Order = require('../schemas/orderSchemas');
+const Product = require('../schemas/productSchemas'); // Import the Product schema/model
 
-//Add Order 
 exports.addOrder = async (req, res) => {
-    const { userId, package, guest, status, bookingReference } = req.body;
+    const { userId, productId, guests, status, cancellationProtectionFee, totalCost, bookingReference, paymentMethod } = req.body;
 
-    if (!userId || !package || !guest || !status || !bookingReference) {
+    if (!userId || !productId || !guests || !status || !cancellationProtectionFee || !totalCost || !bookingReference || !paymentMethod) {
         return res.status(400).json({ message: 'Please enter all fields' });
     }
 
     try {
-        const data = await Order.create({ userId, package, bookingDateArrival, bookingDateDepareture, guest, status: bookingReference });
+        // Fetch the product details using the productId
+        const product = await Product.findById(productId);
+
+        if (!product) {
+            return res.status(404).json({ message: 'Product not found' });
+        }
+
+        // Create the order, including the fetched product details
+        const data = await Order.create({ userId, productId, guests, status, cancellationProtectionFee, totalCost, bookingReference, paymentMethod });
         return res.status(201).json(data);
     } catch (err) {
+        console.log(err);
         return res.status(500).json({ message: 'Error creating order' });
     }
 };
