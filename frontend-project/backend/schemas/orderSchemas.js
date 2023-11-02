@@ -4,13 +4,9 @@ const { v4: uuidv4 } = require('uuid');
 const orderSchema = mongoose.Schema({
 userId: {
 type: mongoose.Types.ObjectId, ref: 'User', },
-productId: {
+product: {
   type: mongoose.Types.ObjectId, ref: 'Product' 
 },
-  // bookingDateArrival: {
-  // type: Date, required: true  }, 
-  // bookingDateDeparture: {
-  // type: Date, required: true }, 
 guests: {
   type: Number, required: true
 },
@@ -18,7 +14,6 @@ status: {
   type: String,
   enum: ['Pending', 'Confirmed', 'Denied'],
   default: 'Pending',
-  required: true
 },
 cancellationProtectionFee: {
   type: Boolean,
@@ -31,7 +26,6 @@ totalCost: {
 bookingReference: {
   type: String, 
   default: uuidv4,
-  required: true
 },
 paymentMethod: {
   type: String,
