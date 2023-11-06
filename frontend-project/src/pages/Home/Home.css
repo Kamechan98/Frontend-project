@@ -1,0 +1,66 @@
+#about-us {
+  padding: 10px;
+}
+#about-us #home-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 30px;
+  padding-left: 80px;
+}
+#about-us #home-info p {
+  width: 350px;
+}
+
+.headline {
+  text-align: center;
+}
+
+.date-pick {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.date-pick .label {
+  margin-top: 25%;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.date-pick .DatePicker {
+  margin-top: 10px;
+  display: block;
+  color: #fff;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  color: #000;
+}
+
+#packages {
+  display: flex;
+}
+#packages .headline {
+  text-align: center;
+}
+#packages #package-info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 30px;
+}
+#packages #package-info #package {
+  padding-left: 80px;
+}
+#packages #package-info #package-img {
+  height: 350px;
+  width: 350px;
+}
+#packages #package-info p {
+  width: 350px;
+}
+#packages #package-info #symbol {
+  height: 30px;
+  width: 30px;
+  margin-left: 10px;
+}/*# sourceMappingURL=Home.css.map */

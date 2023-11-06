@@ -1,23 +1,29 @@
 import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Nav from './components/Nav/Nav'
 import Footer from './components/Footer/Footer'
-import Login from './components/Login/Login'
+import Home from './pages/Home/Home'
+import Products from './pages/Products/Products'
+import Login from './pages/Login/Login'
+import Register from './pages/Register/Register'
+import ProductDetails from './pages/ProductDetails/ProductDetails'
 
 const App = () => {
   return (
-    <div>
+      <Router>
+      <div>
       <Nav/>
-      <div className='div'>
-        <h1>NorthernNest Retreat</h1>
-        <h2>Explore our luxury & romantic cabins for couples</h2>
-        <p>Select one of our generous packages, along with a modern, comfy and luxurious decor 
-        where you and your partner can spend some romatic time with each other, whether it be by
-        skiing, hiking, or by taking a warm bath or spend an hour in the sauna.
-        </p>
-          <Login/>
+      <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/products' element={<Products/>}/>
+      <Route path='/login' element={<Login/>}/>
+      <Route path='/register' element={<Register/>}/>
+      <Route path='/products' element={<Products/>}/>
+      <Route path='/products/:id' element={<ProductDetails/>}/>
+      </Routes>
       </div>
       <Footer/>
-    </div>
+      </Router>
   )
 }
 

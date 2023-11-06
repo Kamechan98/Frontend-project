@@ -1,0 +1,29 @@
+h2 {
+  text-align: center;
+}
+
+#card {
+  display: inline-block;
+  padding-right: 50px;
+}
+#card #review-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#card #review-card #user-review {
+  display: flex;
+  flex-direction: column;
+}
+#card #review-card #user-review #user-img {
+  border-radius: 100%;
+  height: 100px;
+  width: 100px;
+}
+#card #review-card #user-review #review-stars {
+  width: 100px;
+}
+#card #review-card #user-review #review {
+  width: 270px;
+  height: 100px;
+}/*# sourceMappingURL=Review.css.map */
