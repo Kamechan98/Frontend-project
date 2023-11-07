@@ -68,8 +68,14 @@
 #activities {
   position: relative;
   left: 500px;
+  display: flex;
+  flex-direction: column;
+  width: 900px;
 }
 
 #reviews {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=Home.css.map */

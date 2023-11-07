@@ -68,6 +68,9 @@
 #activities {
     position: relative;
     left: 500px;
+    display: flex;
+    flex-direction: column;
+    width: 900px;
 }
 
 // .image-carousel-container{
@@ -76,4 +79,7 @@
 
 #reviews{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
