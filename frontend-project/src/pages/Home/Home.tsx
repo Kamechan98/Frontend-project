@@ -4,6 +4,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 import './Home.scss'
 import en from 'date-fns/locale/en-GB';
 import Review from '../../components/Review/Review';
+import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
 registerLocale('en-GB', en);
 
 const Home: React.FC = () => {
@@ -15,6 +16,16 @@ const Home: React.FC = () => {
   //   setStartDate(startDate);
   //   setEndDate(endDate);
   // };
+  const images = [
+    'https://content1.getnarrativeapp.com/static/83d7e76d-31eb-4a4d-a61d-08582174bfe2/couple-denim-Winter-Snow-montana-rustic-cabin.jpg?w=750',
+    'https://brokenbowcabinlodging.com/wp-content/uploads/2020/12/Romantic-Cabin-in-Oklahoma.jpg',
+    'https://www.beaversbendcreativeescape.com/wp-content/uploads/2022/05/Romantic-Cabins-Broken-Bow.jpg',
+    'https://www.chaletvillage.com/wp-content/uploads/2017/01/Romantic-couple-drinking-wine-next-to-the-fireplace.jpg',
+    'https://fetch.getnarrativeapp.com/static/b9bae729-a5e8-439a-b0a3-3fa50dc33ba2/Mountain-Gettaway-Couples-Session.jpg?w=1500',
+    'https://images.pexels.com/photos/6667978/pexels-photo-6667978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+
+    // Add more image URLs as needed
+  ];
 
   return (
   <div>
@@ -44,8 +55,8 @@ const Home: React.FC = () => {
         locale="en-GB" // If you're specifying a locale
       />
       </div>
-    </div>
-    <div className='about us' id='about-us'>
+     </div>
+      <div className='about us' id='about-us'>
      <h2 className='headline'>About us</h2>
       <div className='home-info' id='home-info'>
         <div className='about us' id='about-us'>
@@ -60,8 +71,8 @@ const Home: React.FC = () => {
         <h3>Booking and Reservations</h3>
         <p>Booking with us is easy and convenient. Simply select your desired dates and cabin, and we'll take care of the rest. We offer flexible options to suit your preferences and ensure a seamless reservation process.</p>
         </div>
+        </div>
       </div>
-    </div>
 
       <h2 className='headline'>Tailored Retreats for Every Budget</h2>
       <div className='packages' id='packages'>
@@ -101,40 +112,18 @@ const Home: React.FC = () => {
 
       <h2 className='headline'>Explore our activities</h2>
       <div className='activities' id='activities'>
-      <div className='activity-info' id='activity-info'>
-        <div className='activity' id='activity'>
+          <h1>Image Carousel</h1>
+          <ImageCarousel images={images}/>
+        </div>
         {/* insert image carousel here*/}
-      <h2>Discover Memorable Retreat Experiences</h2>
-      {/* <div>
-      <div className='user-review' id='user-review'>
-      <img className='user-img' id='user-img' src="https://st.depositphotos.com/1770836/1372/i/450/depositphotos_13720689-stock-photo-young-businesswoman.jpg" alt="image representing package 'Budget'" />
-      <p className='user-name' id='user-name'>Jane</p>
-      <img className='review-stars' id='review-stars' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/5_stars.svg/1024px-5_stars.svg.png" alt="" />
-      <p id='review' className='review'>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget turpis auctor, ullamcorper arcu eget, vehicula quam. Sed sit amet lacinia ex, vel viverra justo.”</p>
-      </div>
-      <div className='user-review' id='user-review'>
-      <img className='user-img' id='user-img' src="https://st.depositphotos.com/1770836/1372/i/450/depositphotos_13720689-stock-photo-young-businesswoman.jpg" alt="image representing package 'Budget'" />
-      <p className='user-name' id='user-name'>John</p>
-      <img className='review-stars' id='review-stars' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/5_stars.svg/1024px-5_stars.svg.png" alt="" />
-      <p id='review' className='review'>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget turpis auctor, ullamcorper arcu eget, vehicula quam. Sed sit amet lacinia ex, vel viverra justo.”</p>
-      </div>
-      <div className='user-review' id='user-review'>
-      <img className='user-img' id='user-img' src="https://st.depositphotos.com/1770836/1372/i/450/depositphotos_13720689-stock-photo-young-businesswoman.jpg" alt="image representing package 'Budget'" />
-      <p className='user-name' id='user-name'>Doe</p>
-      <img className='review-stars' id='review-stars' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/5_stars.svg/1024px-5_stars.svg.png" alt="" />
-      <p id='review' className='review'>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget turpis auctor, ullamcorper arcu eget, vehicula quam. Sed sit amet lacinia ex, vel viverra justo.”</p>
-      </div>
-      </div> */}
-      <Review/>
-      <Review/>
-      <Review/>
-        <div>
+        <div className='reviews' id='reviews'>
+        <h2>Discover Memorable Retreat Experiences</h2>
+        <Review/>
+        <Review/>
+        <Review/>  
         </div>
-        </div>
-        </div>
-      </div>
 
-      </div>
+  </div>
 
       
   )

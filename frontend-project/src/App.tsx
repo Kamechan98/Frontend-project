@@ -11,7 +11,6 @@ import ProductDetails from './pages/ProductDetails/ProductDetails'
 const App = () => {
   return (
       <Router>
-      <div>
       <Nav/>
       <Routes>
       <Route path='/' element={<Home/>}/>
@@ -21,7 +20,6 @@ const App = () => {
       <Route path='/products' element={<Products/>}/>
       <Route path='/products/:id' element={<ProductDetails/>}/>
       </Routes>
-      </div>
       <Footer/>
       </Router>
   )

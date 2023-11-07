@@ -63,4 +63,13 @@
   height: 30px;
   width: 30px;
   margin-left: 10px;
+}
+
+#activities {
+  position: relative;
+  left: 500px;
+}
+
+#reviews {
+  display: flex;
 }/*# sourceMappingURL=Home.css.map */

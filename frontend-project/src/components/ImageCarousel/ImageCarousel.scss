@@ -1,0 +1,14 @@
+
+ .image-slide {
+    text-align: center; /* Center the image */
+    // margin: 0 auto; /* Center the container */
+    .carousel-image {
+    width: 500px; /* Set the width */
+    height: 400px; /* Set the height */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+    }
+    }
+
+  
+  /* Optional: You can add styling for the image container slide as well */
+ 
