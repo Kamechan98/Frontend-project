@@ -73,7 +73,7 @@ elements.forEach(element => {
 
 
   return (
-    <div className='container'>
+    <div className='im-container'>
       <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index} className="image-slide" id='image-slide'>
