@@ -1,8 +1,34 @@
+$primary-color:#486349;
+$secondary-color:#D8C690;
+$third-color:#CBB26A;
+$white-text:#ffff;
+$black-text: #000000;
+
+
 .nav-bar {
-    height: 150px;
+    height: 90px;
     background-color: #486349;
     width: 100%;
     text-align: center;
+    #logo-img{
+        height: 80px;
+        width: 140px;
+        display: inline;
+        position: absolute;
+        left: 0;
+    }
+#nav-links{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+}
+    p,
+    a{
+        padding-right: 20px;
+        color: white;
+        padding-top: 15px;
+    }
 }
 
 

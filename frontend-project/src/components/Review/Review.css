@@ -13,7 +13,8 @@ h2 {
 }
 #card #review-card #user-review {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
 }
 #card #review-card #user-review #user-img {
   border-radius: 100%;

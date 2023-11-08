@@ -1,8 +1,27 @@
 .nav-bar {
-  height: 150px;
+  height: 90px;
   background-color: #486349;
   width: 100%;
   text-align: center;
+}
+.nav-bar #logo-img {
+  height: 80px;
+  width: 140px;
+  display: inline;
+  position: absolute;
+  left: 0;
+}
+.nav-bar #nav-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+}
+.nav-bar p,
+.nav-bar a {
+  padding-right: 20px;
+  color: white;
+  padding-top: 15px;
 }
 
 @media only screen and (max-width: 768px) {

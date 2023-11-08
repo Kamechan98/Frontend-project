@@ -13,7 +13,7 @@
   border: solid black 0.5px;
   border-radius: 19px;
 }
-.container #login-form {
+.container #reg-form {
   width: 80vh;
   display: flex;
   flex-direction: column;
@@ -22,30 +22,22 @@
   justify-content: center;
   align-items: flex-start;
 }
-.container #login-form label {
+.container #reg-form label {
   font-size: medium;
   color: black;
   display: flex;
 }
-.container #login-form input {
+.container #reg-form input {
   background-color: #fff;
   border-radius: 10px;
   height: 30px;
   width: 80%;
 }
-.container #login-form .login-link {
-  margin: 0;
-  text-decoration: none;
-}
-.container #login-form .login-link a {
-  text-decoration: underline;
-  color: #486349;
-}
-.container #login-form .login-btn {
+.container #reg-form .reg-btn {
   height: 40px;
   width: 300px;
   border-radius: 10px;
   text-align: center;
   background-color: #CBB26A;
   font-size: medium;
-}/*# sourceMappingURL=Login.css.map */
+}/*# sourceMappingURL=Register.css.map */
