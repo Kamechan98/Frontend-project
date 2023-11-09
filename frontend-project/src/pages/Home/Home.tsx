@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import DatePicker, {registerLocale } from 'react-datepicker';
+import { useNavigate } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css'
 import './Home.scss'
 import en from 'date-fns/locale/en-GB';
@@ -8,14 +9,14 @@ import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
 registerLocale('en-GB', en);
 
 const Home: React.FC = () => {
+
+  const navigate = useNavigate()
+
   const [startDate, setStartDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
+  const [selectedPackage, setSelectedPackage] = useState<string>("All")
 
-  // const handleChange = (range) => {
-  //   const [startDate, endDate] = range;
-  //   setStartDate(startDate);
-  //   setEndDate(endDate);
-  // };
+
   const images = [
     'https://content1.getnarrativeapp.com/static/83d7e76d-31eb-4a4d-a61d-08582174bfe2/couple-denim-Winter-Snow-montana-rustic-cabin.jpg?w=750',
     'https://brokenbowcabinlodging.com/wp-content/uploads/2020/12/Romantic-Cabin-in-Oklahoma.jpg',
@@ -26,6 +27,26 @@ const Home: React.FC = () => {
 
     // Add more image URLs as needed
   ];
+
+  const handleSearch = () => {
+    const params = new URLSearchParams()
+    const formatDate = (date: Date) => {
+      return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`
+    }
+    if(startDate) {
+      params.append("startDate", formatDate(startDate))
+    }
+    if(endDate) {
+      params.append("endDate", formatDate(endDate))
+
+    }
+    if(selectedPackage !== "All"){
+      params.append("selectedPackage", selectedPackage)
+    }
+    const url =`/products?${params}`
+    console.log("URL", url)
+    navigate(url)
+  }
 
   return (
   <div>
@@ -55,6 +76,19 @@ const Home: React.FC = () => {
         locale="en-GB" // If you're specifying a locale
       />
       </div>
+      <div className='package-dropdown-list' id='package-dropdown-list'>
+    <label>Packages:</label>
+    <select
+      value={selectedPackage}
+      onChange={(e) => setSelectedPackage(e.target.value)}
+    name="package-list" id="package-list">
+    <option value="All">All</option>
+    <option value="Budget">Budget</option>
+    <option value="Standard">Standard</option>
+    <option value="Deluxe">Deluxe</option>
+    </select> 
+      </div>
+     <button className='select-btn' id='select-btn' onClick={handleSearch}>Search</button>
      </div>
       <div className='about us' id='about-us'>
      <h2 className='headline'>About us</h2>
