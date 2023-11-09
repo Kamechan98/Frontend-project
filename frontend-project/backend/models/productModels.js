@@ -35,10 +35,19 @@ exports.addProduct = async (req, res) => {
 //Get products
 
 exports.getAllProducts = async (req, res) => {
+    // console.log("req", req)
     try {
-        const allProducts = await Product.find();
+        let query = {}
+        if(req.query.selectedPackage){
+            query.package = req.query.selectedPackage
+        }
+
+        const allProducts = await Product.find(query)
+        
+        console.log("all products", allProducts)
         return res.status(200).json(allProducts);
     } catch (err) {
+        console.log("ERROR", err)
         return res.status(500).json({ message: 'Error fetching products' });
     }
 };

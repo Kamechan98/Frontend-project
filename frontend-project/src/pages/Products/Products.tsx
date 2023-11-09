@@ -1,21 +1,17 @@
-import React, {useEffect} from 'react'
-import { useLocation } from "react-router-dom"
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
+import ProductCard from '../../components/ProductCard/ProductCard';
 
-const Products = () => {
-  const location = useLocation();
-  const queryParams = new URLSearchParams(location.search);
 
-  useEffect(() => {
-    const requestBody = Object.fromEntries(queryParams.entries())
-    console.log("query", requestBody)
-    //TODO GET data from backend
-    //Send query params in get request to filter data
-  },[queryParams])
-  
-   
+const Products: React.FC = () => {
+
   return (
-    <div>Products</div>
-  )
-}
+    <div>
+    <ProductCard/>
+    
+  </div>
+  );
+};
 
-export default Products
+export default Products;

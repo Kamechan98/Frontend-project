@@ -1,0 +1,37 @@
+h1{
+    text-align: center;
+}
+
+#product-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+// image-slide
+#card{
+    width: min-content;
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    border: solid black 2px;
+    padding: 10px;
+    margin-bottom: 20px;
+    h2{
+        text-align: center;
+    }
+    #product-image {
+        text-align: center; /* Center the image */
+        // margin: 0 auto; /* Center the container */
+        .p-image {
+        width: 200px; /* Set the width */
+        height: 300px; /* Set the height */
+        object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+        }
+        }
+}
+
+#slick-next {
+    position: absolute;
+    left: 210px;
+    }

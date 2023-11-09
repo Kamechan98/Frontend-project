@@ -1,0 +1,37 @@
+h1 {
+  text-align: center;
+}
+
+#product-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#card {
+  width: -moz-min-content;
+  width: min-content;
+  display: flex;
+  flex-direction: row;
+  align-items: normal;
+  border: solid black 2px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+#card h2 {
+  text-align: center;
+}
+#card #product-image {
+  text-align: center; /* Center the image */
+}
+#card #product-image .p-image {
+  width: 200px; /* Set the width */
+  height: 300px; /* Set the height */
+  -o-object-fit: cover;
+     object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+}
+
+#slick-next {
+  position: absolute;
+  left: 210px;
+}/*# sourceMappingURL=ProductCard.css.map */

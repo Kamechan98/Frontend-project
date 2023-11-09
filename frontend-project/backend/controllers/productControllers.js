@@ -7,7 +7,7 @@ const { addProduct, getAllProducts, getProductsByPackage, getProductById, update
 router.post('/add', addProduct);
 
 //Get all products 
-router.get('/getproducts', getAllProducts);
+router.get('/', getAllProducts);
 
 router.get('/package/:packageType', getProductsByPackage)
 
