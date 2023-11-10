@@ -3,7 +3,7 @@ import './Review.scss'
 
 const Review = () => {
   return (
-    <div className='card' id='card'>
+    <div className='review-container' id='review-container'>
       <div className='review-card' id='review-card'>
       <div className='user-review' id='user-review'>
       <img className='user-img' id='user-img' src="https://st.depositphotos.com/1770836/1372/i/450/depositphotos_13720689-stock-photo-young-businesswoman.jpg" alt="image representing package 'Budget'" />

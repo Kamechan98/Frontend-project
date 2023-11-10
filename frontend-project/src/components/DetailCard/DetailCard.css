@@ -1,0 +1,48 @@
+#detail-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#detail-card #facilities-card {
+  border: solid 2px #836e6e;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  right: 200px;
+}
+#detail-card #facilities-card li {
+  display: flex;
+}
+#detail-card #amenities-card {
+  border: solid 2px #836e6e;
+  border-radius: 20px;
+  display: flex;
+  position: relative;
+  bottom: 300px;
+  right: 137px;
+}
+
+#reservetion-card {
+  padding: 20px;
+  border-radius: 20px;
+  border: solid 2px #836e6e;
+  position: relative;
+  bottom: 180px;
+  left: 400px;
+}
+
+#reserve-btn {
+  height: 40px;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #CBB26A;
+  font-size: medium;
+}
+
+#product-reviews {
+  display: inline-flex;
+  flex-direction: row;
+}/*# sourceMappingURL=DetailCard.css.map */

@@ -1,9 +1,11 @@
-import React from 'react'
+import DetailCard from '../../components/DetailCard/DetailCard';
 
-const ProductDetails = () => {
+
+const ProductDetails: React.FC = () => {
   return (
-    <div>ProductDetails</div>
-  )
-}
+   <DetailCard/>
+  );
+};
+
 
 export default ProductDetails

@@ -1,5 +1,5 @@
 h1 {
-  text-align: center;
+  display: flex;
 }
 
 #product-page {
@@ -7,31 +7,65 @@ h1 {
   flex-direction: column;
   justify-content: space-evenly;
 }
+#product-page h2 {
+  display: flex;
+}
+
+#like-heart {
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+}
+#like-heart #heart {
+  width: 30px;
+  height: 30px;
+}
 
 #card {
-  width: -moz-min-content;
-  width: min-content;
+  height: 400px;
+  width: 700px;
   display: flex;
   flex-direction: row;
   align-items: normal;
-  border: solid black 2px;
+  border: solid rgb(134, 134, 134) 2px;
+  border-radius: 20px;
   padding: 10px;
   margin-bottom: 20px;
 }
-#card h2 {
+#card #card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  bottom: 55px;
+  left: 10px;
+}
+#card #card-content h3 {
   text-align: center;
 }
-#card #product-image {
-  text-align: center; /* Center the image */
+
+#product-image {
+  text-align: center;
 }
-#card #product-image .p-image {
-  width: 200px; /* Set the width */
-  height: 300px; /* Set the height */
+#product-image .p-image {
+  border-radius: 20px;
+  width: 500px;
+  height: 300px;
   -o-object-fit: cover;
-     object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+     object-fit: cover;
 }
 
-#slick-next {
-  position: absolute;
-  left: 210px;
+.view-product-btn {
+  height: 40px;
+  width: 100px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #CBB26A;
+  font-size: medium;
+  display: flex;
+  color: #000;
+  text-decoration: none;
+  flex-direction: column;
+  justify-content: space-around;
 }/*# sourceMappingURL=ProductCard.css.map */
