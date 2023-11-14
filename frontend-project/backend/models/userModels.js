@@ -2,7 +2,6 @@ const User = require('../schemas/userSchemas');
 const bcrypt = require('bcryptjs');
 const { generateToken } = require('../auth/auth');
 
-
 exports.addUser = async (req, res) => {
     const { firstName, lastName, email, password } = req.body;
 
@@ -17,9 +16,11 @@ exports.addUser = async (req, res) => {
         const data = await User.create({ firstName, lastName, email, password: hash });
         return res.status(201).json(data);
     } catch (err) {
+        console.error('Error creating a new user:', err);
         return res.status(500).json({ message: 'Error creating a new user' });
     }
 };
+
 
 
 exports.login = async (req, res) => {

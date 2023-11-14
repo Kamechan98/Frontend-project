@@ -10,13 +10,11 @@ const URL = 'http://localhost:9999/api/products'
 const ProductCard: React.FC = () => {
 
     const location = useLocation();
-    // const queryParams = new URLSearchParams(location.search);
     const [products, setProducts] = useState<Product[]>([]);
   
     useEffect(() => {
       const fetchData = async () => {
         try {
-          // const requestBody = Object.fromEntries(queryParams.entries());
           const endpoint = `${URL}${location.search}`;
           const response = await fetch(endpoint);
     

@@ -3,6 +3,7 @@ import DatePicker, {registerLocale } from 'react-datepicker';
 import { useNavigate } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css'
 import './Home.scss'
+import HeroImg from '../../assets/Heroimg.png';
 import en from 'date-fns/locale/en-GB';
 import Review from '../../components/Review/Review';
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
@@ -50,6 +51,9 @@ const Home: React.FC = () => {
 
   return (
   <div>
+    <div className='hero-img' id='hero-img'>
+    <img src={HeroImg} alt="hero image" />
+    </div>
     <div id='date-pick' className='date-pick'>
       <div>
       <label className='label' id='label'>Check-In Date:</label>

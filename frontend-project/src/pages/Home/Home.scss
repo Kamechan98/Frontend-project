@@ -4,6 +4,15 @@ $third-color:#CBB26A;
 $white-text:#ffff;
 $black-text: #000000;
 
+#hero-img{
+    display: flex;
+    justify-content: flex-start;
+    img{
+        width: 100%;
+        height: 850px;
+    }
+}
+
 #about-us{
     padding: 10px;  
     #home-info{
