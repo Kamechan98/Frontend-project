@@ -1,11 +1,11 @@
-.container {
+#container {
   width: 800px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 300px;
 }
-.container .Booking-info-headline {
+#container .Booking-info-headline {
   background-color: #486349;
   color: white;
   height: 90px;
@@ -16,29 +16,29 @@
   align-items: center;
   justify-content: start;
 }
-.container .booking-dates {
+#container .booking-dates {
   display: flex;
 }
-.container .booking-dates .check-in-dates,
-.container .booking-dates .check-out-dates {
+#container .booking-dates .check-in-dates,
+#container .booking-dates .check-out-dates {
   display: flex;
   flex-direction: column;
 }
-.container .booking-dates #check-in-dates {
+#container .booking-dates #check-in-dates {
   margin-left: 50px;
 }
-.container .booking-dates #check-out-dates {
+#container .booking-dates #check-out-dates {
   margin-left: 400px;
 }
-.container #booking-info {
+#container #booking-info {
   margin-left: 50px;
 }
-.container #booking-form {
+#container #booking-form {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.container #booking-form #form {
+#container #booking-form #form {
   display: flex;
   flex-direction: column;
   width: 80vh;
@@ -49,39 +49,39 @@
   justify-content: center;
   align-items: flex-start;
 }
-.container #booking-form #form input {
+#container #booking-form #form input {
   background-color: #fff;
   color: #000000;
   border-radius: 10px;
   height: 30px;
   width: 80%;
 }
-.container #booking-form #form #form-input-phone-number {
+#container #booking-form #form #form-input-phone-number {
   margin-bottom: 20px;
 }
-.container #booking-form #form #form-input-adress {
+#container #booking-form #form #form-input-adress {
   margin-bottom: 20px;
 }
-.container #booking-form #form label {
+#container #booking-form #form label {
   font-size: medium;
   color: black;
   display: flex;
 }
-.container #booking-form #payment-options {
+#container #booking-form #payment-options {
   display: flex;
   flex-direction: column;
   position: relative;
   right: 45px;
   top: -45px;
 }
-.container #booking-form #payment-options img {
+#container #booking-form #payment-options img {
   width: 150px;
 }
-.container #booking-form #payment-options #radio-btn {
+#container #booking-form #payment-options #radio-btn {
   background-color: #fff;
   color: #000000;
 }
-.container #confirm-btn {
+#container #confirm-btn {
   height: 40px;
   width: 300px;
   border-radius: 10px;

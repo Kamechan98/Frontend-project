@@ -9,9 +9,14 @@
 .container h1 {
   background-color: #486349;
   margin: 0;
-  padding: 10px;
+  height: 90px;
+  color: #FFF;
   border: solid black 0.5px;
   border-radius: 19px;
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 .container #login-form {
   width: 80vh;

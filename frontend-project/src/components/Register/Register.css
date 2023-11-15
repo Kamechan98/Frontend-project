@@ -9,9 +9,14 @@
 .container h1 {
   background-color: #486349;
   margin: 0;
-  padding: 10px;
+  height: 90px;
   border: solid black 0.5px;
+  color: #fff;
   border-radius: 19px;
+  width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: start;
 }
 .container #reg-form {
   width: 80vh;
