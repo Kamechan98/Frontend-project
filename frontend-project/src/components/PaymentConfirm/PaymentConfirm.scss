@@ -1,0 +1,32 @@
+$primary-color:#486349;
+$secondary-color:#D8C690;
+$third-color:#CBB26A;
+$white-text:#ffff;
+$black-text: #000000;
+
+.container{
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 300px;
+    .headline{
+        background-color: #486349;
+        height: 90px;
+        margin: 0;
+        border-radius: 19px;
+        width: inherit;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .payment{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+

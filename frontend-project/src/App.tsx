@@ -7,6 +7,8 @@ import Products from './pages/Products/Products'
 import Login from './pages/Login/Login'
 import Register from './pages/Register/Register'
 import ProductDetails from './pages/ProductDetails/ProductDetails'
+import BookingConfirmation from './pages/BookingConfirmation/BookingConfirmation'
+import PaymentConfirmation from './pages/PaymentConfirmation/PaymentConfirmation'
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
       <Route path='/register' element={<Register/>}/>
       <Route path='/products' element={<Products/>}/>
       <Route path='/products/:id' element={<ProductDetails/>}/>
+      <Route path='/booking-confirmation' element={<BookingConfirmation/>}/>
+     <Route path='/payment-confirmation' element={<PaymentConfirmation/>}/>
       </Routes>
       <Footer/>
       </Router>
