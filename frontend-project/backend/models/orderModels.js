@@ -5,9 +5,10 @@ const Order = require('../schemas/orderSchemas');
 const Product = require('../schemas/productSchemas'); // Import the Product schema/model
 
 exports.addOrder = async (req, res) => {
-    const { userId, product, guests, status, cancellationProtectionFee, totalCost, bookingReference, paymentMethod } = req.body;
+    const { userId, body } = req 
+    const { product, guests, status, cancellationProtectionFee, totalCost, paymentMethod } = body;
 
-    if (!userId || !product || !guests || !cancellationProtectionFee || !totalCost || !paymentMethod) {
+    if ( !product || !guests || !cancellationProtectionFee || !totalCost || !paymentMethod) {
         return res.status(400).json({ message: 'Please enter all fields' });
     }
 
@@ -18,9 +19,8 @@ exports.addOrder = async (req, res) => {
         if (!_product) {
             return res.status(404).json({ message: 'Product not found' });
         }
-
         // Create the order, including the fetched product details
-        const newOrder = await Order.create({ userId, product, guests, status, cancellationProtectionFee, totalCost, bookingReference, paymentMethod });
+        const newOrder = await Order.create({ userId, product, guests, status, cancellationProtectionFee, totalCost, paymentMethod });
         await newOrder.populate('product');
         return res.status(201).json(newOrder);
     } catch (err) {

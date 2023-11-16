@@ -29,9 +29,16 @@ bookingReference: {
 },
 paymentMethod: {
   type: String,
-  enum: ['Mastercard', 'Klarna', 'Paypal', 'American Express'],
+  enum: ['Mastercard', 'Klarna', 'Paypal', 'Amex'],
   required: true
 }
 }, { timestamps: true })
 
+
+
+orderSchema.pre('save', function(next) {
+  this.totalCost = this.totalCost + (this.cancellationProtectionFee ? 500 : 0);
+  console.log("PRE save", this.totalCost)
+  next();
+});
 module.exports = mongoose.model('Order', orderSchema)

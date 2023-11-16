@@ -32,7 +32,7 @@ const Home: React.FC = () => {
   const handleSearch = () => {
     const params = new URLSearchParams()
     const formatDate = (date: Date) => {
-      return `${date.getFullYear()}-${date.getMonth()}-${date.getDay()}`
+      return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
     }
     if(startDate) {
       params.append("startDate", formatDate(startDate))
@@ -44,6 +44,7 @@ const Home: React.FC = () => {
     if(selectedPackage !== "All"){
       params.append("selectedPackage", selectedPackage)
     }
+    
     const url =`/products?${params}`
     console.log("URL", url)
     navigate(url)

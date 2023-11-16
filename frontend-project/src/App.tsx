@@ -11,6 +11,13 @@ import BookingConfirmation from './pages/BookingConfirmation/BookingConfirmation
 import PaymentConfirmation from './pages/PaymentConfirmation/PaymentConfirmation'
 
 const App = () => {
+  React.useEffect(() => {
+    console.log("HELLO APP")
+    return () => {
+        console.log("GOOD BYE APP")
+        // orderContext.setOrderProduct(null)
+    }
+},[])
   return (
       <Router>
       <Nav/>

@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import ImageCarousel from '../ImageCarousel/ImageCarousel';
 import './DetailCard.scss'
 import Review from '../Review/Review';
+import { useQuery } from '../../utils/types/hooks';
+import { useOrderContext } from '../../Context/OrderContext';
 
 const DetailCard = () => {
 
     const { id } = useParams()
-
+    const  [search, queryData] = useQuery()
+    const orderContext = useOrderContext()
+    
     const [product, setProduct] = useState<Product | null>(null);
-    const [products, setProducts] = useState<Product[]>([]);
+    // const [products, setProducts] = useState<Product[]>([]);
     // const navigate = useNavigate()
   
     // const {user} = useSelector(state => state.auth)
@@ -72,11 +76,15 @@ const DetailCard = () => {
            <p>{product.guests}</p>
             </div>
             <div className='container-2' id='container-2'>
-           <p>Check-in Date</p>
-           <p>Check-out Date</p>
+           <p>Check-in Date: {queryData?.startDate}</p>
+           <p>Check-out Date {queryData?.endDate}</p>
             </div>
            <h3>Total: Price  10.000 SEK</h3>
-           <button className='reserve-btn' id='reserve-btn'>Reserve</button>
+           <Link to={`/booking-confirmation?${search}`} className='reserve-btn' id='reserve-btn' onClick={() => {
+            orderContext.setOrderProduct(product)
+           }}>
+            Reserve
+           </Link>
         </div>
 
         <div className='amenities-card' id='amenities-card'>

@@ -5,12 +5,7 @@ import login from './loginService'
 
 // const URL = 'http://localhost:9999/api/users/login'
 
-interface FormDataProps {
-  email: string;
-  password: string;
-}
-
-const LoginForm: React.FC<FormDataProps> = () => {
+const LoginForm: React.FC= () => {
 
   const navigate = useNavigate()
 
@@ -32,6 +27,9 @@ const LoginForm: React.FC<FormDataProps> = () => {
       const user = await login(formData.email, formData.password);
 
       // Handle successful login (e.g., store user information in state or context)
+      if(user.token) {
+        localStorage.setItem("TOKEN", user.token)
+      }
       console.log('Login successful:', user);
       navigate('/')
       // Reset form and errors
