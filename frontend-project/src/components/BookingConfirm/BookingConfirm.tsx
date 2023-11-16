@@ -21,7 +21,7 @@ interface NewOrder {
   paymentMethod: string;
 }
 
-const navigate = useNavigate()
+
 
 const paymentMethods = [
   {name: "Mastercard", image: Mastercard},
@@ -33,6 +33,9 @@ const paymentMethods = [
 
 
 const BookingConfirm: React.FC<BookingConfirmProps> = () => {
+
+    const navigate = useNavigate()
+
     const  [search, queryData] = useQuery()
     const orderContext = useOrderContext()
 
@@ -82,7 +85,7 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
         // return console.log("newOrder", newOrder)
         try {
           const token = localStorage.getItem("TOKEN")
-         if(token !== null){
+         if(!token){
             navigate("/login")
           } 
           const response = await fetch('http://localhost:9999/api/orders/add', {
@@ -100,6 +103,7 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
           const data = await response.json()
           // Handle successful booking confirmation, e.g., redirect to a confirmation page
           console.log('Booking confirmed successfully', data);
+          navigate("/payment-confirmation")
         } catch (error) {
           console.error('Error confirming booking:', error);
           // Handle error, e.g., display an error message to the user
