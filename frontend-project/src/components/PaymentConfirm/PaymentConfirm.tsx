@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Checkmark from '../../assets/Checkmark.svg';
 import './PaymentConfirm.scss'
-import { useOrderContext } from '../../Context/OrderContext';
-import { useProductContext } from '../../Context/ProductContext';
-import { useQuery } from '../../utils/types/hooks';
+import { useUserContext } from '../../Context/UserContext';
+// import { useQuery } from '../../utils/types/hooks';
+import { OrderProvider, useOrderContext } from '../../Context/OrderContext';
 
 const PaymentConfirm = () => {
 
-  const  [search, queryData] = useQuery();
   const orderContext = useOrderContext();
-  const productContext = useProductContext();
+  const userContext = useUserContext();
 
-  
+  const order = orderContext.submittedOrder
 
+  const userEmail = userContext.user?.email
+
+
+  console.log("PROD ",order)
 
   return (
     <div className='container'>
@@ -20,16 +23,25 @@ const PaymentConfirm = () => {
         <img src={Checkmark} alt="checkmark" />
     </div>
     <div className='payment' id='payment'>
+      {!order &&( <div>
+        <p>...Loading order</p>
+        </div>
+      )}
+      
+      {order && (
+      <div>
         <h3>Thank you for your payment!</h3>
         <p>Total payment amount</p>
-        <h4>TOTAL PRICE HERE</h4>
+        <h4> {order.totalCost || 'N/A'} </h4>
+        <h4> {order.product.name} </h4>
         <p>Booking Reference</p>
-        <h4>XXXXXXXXXXXX</h4>
+        <h4>{order.bookingReference || 'N/A'}</h4>
         <p>A Receipt for this transaction has been sent to this email:</p>
-        <p>user@mail.com</p>
+        <p>{userEmail}</p>
+      </div>
+      )}
     </div>
-    </div>
-  )
+    </div>)
 }
 
 export default PaymentConfirm

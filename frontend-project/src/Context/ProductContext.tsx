@@ -5,12 +5,14 @@ interface ProductContextType {
   products: Product[];
   product: Product | null
   setProduct: React.Dispatch<React.SetStateAction<Product | null>>
+  fetchProduct: (id: string) => void
 }
 
 const defaultState: ProductContextType = {
   products: [],
   product: null,
   setProduct: () => {},
+  fetchProduct: () => {}
 }
 
 const ProductContext = createContext<ProductContextType>(defaultState);
@@ -20,28 +22,44 @@ export const ProductProvider = ({ children }: PropsWithChildren) => {
   const [product, setProduct ] = useState<Product | null>(null)
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch('http://localhost:9999/api/products/');
-        const data = await response.json();
 
-        // Assuming data is an array of products, adjust this part based on your API response
-        if (data.length > 0) {
-        // Set the first product in the array, adjust as needed
-        setProduct(data[0]);
-      }
-
-        setProducts(data);
-      } catch (error) {
-        console.error('Error fetching orders:', error);
-      }
-    };
 
     fetchProducts();
   }, []);
 
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch('http://localhost:9999/api/products');
+      const data = await response.json();
+
+      // console.log('Fetched products:', data);
+
+      setProducts(data);
+    } catch (error) {
+      console.error('Error fetching orders:', error);
+    }
+  };
+
+  const fetchProduct = (id: string) => {
+    fetch(`http://localhost:9999/api/products/${id}`)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`Failed to fetch product details: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then((data: Product) => {
+          setProduct(data);
+        })
+        .catch((error) => {
+          console.error(error);
+          // Handle errors, e.g., redirect to an error page or show a message
+        });
+  }
+  
+
   return (
-    <ProductContext.Provider value={{ products, product, setProduct }}>
+    <ProductContext.Provider value={{ products, product, setProduct, fetchProduct }}>
       {children}
     </ProductContext.Provider>
   );

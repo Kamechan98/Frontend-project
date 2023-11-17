@@ -2,10 +2,13 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.scss';
 import login from './loginService'
+import { useUserContext } from '../../Context/UserContext';
 
 // const URL = 'http://localhost:9999/api/users/login'
 
 const LoginForm: React.FC= () => {
+
+  const userContext = useUserContext()
 
   const navigate = useNavigate()
 
@@ -30,6 +33,7 @@ const LoginForm: React.FC= () => {
       if(user.token) {
         localStorage.setItem("TOKEN", user.token)
       }
+      userContext.fetchUser()
       console.log('Login successful:', user);
       navigate('/')
       // Reset form and errors

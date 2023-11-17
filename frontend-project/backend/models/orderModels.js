@@ -8,7 +8,8 @@ exports.addOrder = async (req, res) => {
     const { userId, body } = req 
     const { product, guests, status, cancellationProtectionFee, totalCost, paymentMethod } = body;
 
-    if ( !product || !guests || !cancellationProtectionFee || !totalCost || !paymentMethod) {
+    if ( !product || !guests || !totalCost || !paymentMethod) {
+      console.log("BODY", body)
         return res.status(400).json({ message: 'Please enter all fields' });
     }
 

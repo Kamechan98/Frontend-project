@@ -6,6 +6,7 @@ import AmericanExpress from '../../assets/AmericanExpress.jpg';
 import './BookingConfirm.scss'
 import { useOrderContext } from '../../Context/OrderContext';
 import { useProductContext } from '../../Context/ProductContext';
+// import { useUserContext } from '../../Context/UserContext';
 import { useQuery } from '../../utils/types/hooks';
 import { useNavigate } from 'react-router-dom';
 
@@ -22,8 +23,6 @@ interface NewOrder {
   paymentMethod: string;
 }
 
-
-
 const paymentMethods = [
   {name: "Mastercard", image: Mastercard},
   {name: "Klarna", image: Klarna},
@@ -32,7 +31,6 @@ const paymentMethods = [
   
 ]
 
-
 const BookingConfirm: React.FC<BookingConfirmProps> = () => {
 
     const navigate = useNavigate();
@@ -40,6 +38,7 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
     const  [search, queryData] = useQuery();
     const orderContext = useOrderContext();
     const productContext = useProductContext();
+    // const userContext = useUserContext();
 
     const [newOrder, setNewOrder] = useState({
         product: '', 
@@ -51,22 +50,58 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
       });
 
       useEffect(() => {
+        if (orderContext.orderProduct) {
+          const { _id, price } = orderContext.orderProduct as Product;
+          const { startDate, endDate } = queryData;
+          const nights = calculateNights(startDate, endDate);
+          const totalCost = price * nights;
+          setNewOrder((prevState) => ({
+            ...prevState,
+            product: _id,
+            price,
+          }));
+        }
+      }, [orderContext.orderProduct]);
+
+      const calculateNights = (startDate: string | null, endDate: string | null): number => {
+        if (!startDate || !endDate) return 0;
+    
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        const timeDiff = end.getTime() - start.getTime();
+        const nights = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        return nights;
+      };
+
+      useEffect(() => {
         if (orderContext.orderProduct && productContext.product) {
           const _product = productContext.product as Product;
+          const nights = calculateNights(queryData.startDate, queryData.endDate);
+      
+          console.log('startDate:', queryData.startDate);
+          console.log('endDate:', queryData.endDate);
+          console.log('nights:', nights);
+      
           setNewOrder((prevState) => ({
             ...prevState,
             product: _product._id,
-            totalCost: _product.price,
+            totalCost: _product.price * nights,
           }));
         }
-      }, [orderContext.orderProduct, productContext.product]);
-
+      }, [orderContext.orderProduct, productContext.product, queryData.startDate, queryData.endDate]);
+      
     
-
     // console.log("QUERY", queryData)
     // console.log("ORDER PRODUCT", orderContext.orderProduct)
     // console.log('Product Context:', productContext);
-    // console.log("Product", productContext.product)
+    console.log("Product", productContext.product?.name)
+
+      
+    // useEffect(() => {
+    //   console.log('User:', userContext.user);
+    // }, [userContext.user]);
+
+    // console.log("USER", userContext.user)
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const value = e.target.type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value
@@ -80,33 +115,8 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
 
       const handleConfirmBooking = async () => {
         // return console.log("newOrder", newOrder)
-        try {
-          const token = localStorage.getItem("TOKEN")
-         if(!token){
-            navigate("/login")
-          } 
-          const response = await fetch('http://localhost:9999/api/orders/add', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(newOrder),
-          });
-    
-          if (!response.ok) {
-            throw new Error(`Failed to confirm booking: ${response.status}`);
-          }
-          const data = await response.json()
-          // Handle successful booking confirmation, e.g., redirect to a confirmation page
-          console.log('Booking confirmed successfully', data);
-          navigate("/payment-confirmation")
-        } catch (error) {
-          console.error('Error confirming booking:', error);
-          // Handle error, e.g., display an error message to the user
-        }
+        orderContext.createOrder(newOrder as any, navigate)
       };
-
 
   return (
     <div className='container' id='container'>
@@ -123,18 +133,22 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
     </div>
     <div className='booking-info' id='booking-info'> 
     <h3>Chosen Cabin</h3>
-    <p> {productContext.product?.name} </p>
-    <p>{productContext.product?.location}</p>
-    <h3>Cabin Package</h3>
-    <p>{productContext.product?.package}</p>
-    <p>{productContext.product?.price}</p>
-    <h3>Guests</h3>
-    <p>{productContext.product?.guests}</p>
+  <p>{productContext.product?.name}</p>
+  <p>{productContext.product?.location}</p>
+  <h3>Cabin Package</h3>
+  <p>{productContext.product?.package}</p>
+  <p>{productContext.product?.price}</p>
+  <h3>Guests</h3>
+  <p>{productContext.product?.guests}</p>
     <h3>Cancellation Protection Fee</h3>
     <p>500kr</p>
     <input type="checkbox" checked={newOrder.cancellationProtectionFee} name="cancellationProtectionFee" id="check-box" onChange={handleInputChange} />
     <h3>Total Cost</h3>
-    <p>{newOrder.totalCost}{newOrder.cancellationProtectionFee ? ` + (${500}) ` : ''}SEK</p>
+    <p>
+      {newOrder.totalCost} SEK{' '}
+      {newOrder.cancellationProtectionFee && ` + (500) SEK`} ={' '}
+      {newOrder.cancellationProtectionFee ? newOrder.totalCost + 500 : newOrder.totalCost} SEK
+      </p>
     </div>
     <div className='booking-form' id='booking-form'>
     <form className='form' id='form'>

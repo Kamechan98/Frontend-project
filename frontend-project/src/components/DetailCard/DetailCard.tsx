@@ -5,37 +5,24 @@ import './DetailCard.scss'
 import Review from '../Review/Review';
 import { useQuery } from '../../utils/types/hooks';
 import { useOrderContext } from '../../Context/OrderContext';
+import { useProductContext } from '../../Context/ProductContext';
 
 const DetailCard = () => {
 
     const { id } = useParams()
     const  [search, queryData] = useQuery()
+    const {
+      product,
+      fetchProduct
+    } = useProductContext()
     const orderContext = useOrderContext()
     
-    const [product, setProduct] = useState<Product | null>(null);
-    // const [products, setProducts] = useState<Product[]>([]);
-    // const navigate = useNavigate()
-  
-    // const {user} = useSelector(state => state.auth)
-    // if(!user) return <Navigate to='/login'/>
-  
-    useEffect(() => {
-      // Fetch individual product details
-      fetch(`http://localhost:9999/api/products/${id}`)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error(`Failed to fetch product details: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then((data: Product) => {
-          setProduct(data);
-        })
-        .catch((error) => {
-          console.error(error);
-          // Handle errors, e.g., redirect to an error page or show a message
-        });
-    })
+  useEffect(() => {
+    if(id) {
+      fetchProduct(id)
+    }
+  },[id])
+    
 
   return (
     <div>

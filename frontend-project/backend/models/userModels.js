@@ -50,4 +50,25 @@ exports.login = async (req, res) => {
         return res.status(500).json({ message: 'Error in user login' });
     }
 };
+
+exports.getMyUser = async (req, res) => {
+    try {
+        // Assuming you are passing the user ID through the request parameters
+        const { userId } = req
+
+        // Find the user by ID
+        const user = await User.findById(userId);
+
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        // Send the user data in the response
+        return res.status(200).json({ user });
+    } catch (err) {
+        console.error(err);
+        return res.status(500).json({ message: 'Error in getting user' });
+    }
+};
+
   
