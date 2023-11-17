@@ -1,8 +1,19 @@
 import React from 'react'
 import Checkmark from '../../assets/Checkmark.svg';
 import './PaymentConfirm.scss'
+import { useOrderContext } from '../../Context/OrderContext';
+import { useProductContext } from '../../Context/ProductContext';
+import { useQuery } from '../../utils/types/hooks';
 
 const PaymentConfirm = () => {
+
+  const  [search, queryData] = useQuery();
+  const orderContext = useOrderContext();
+  const productContext = useProductContext();
+
+  
+
+
   return (
     <div className='container'>
     <div className='headline' id='headline'>

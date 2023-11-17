@@ -5,6 +5,7 @@ import Paypal from '../../assets/Paypal.jpg';
 import AmericanExpress from '../../assets/AmericanExpress.jpg';
 import './BookingConfirm.scss'
 import { useOrderContext } from '../../Context/OrderContext';
+import { useProductContext } from '../../Context/ProductContext';
 import { useQuery } from '../../utils/types/hooks';
 import { useNavigate } from 'react-router-dom';
 
@@ -34,10 +35,11 @@ const paymentMethods = [
 
 const BookingConfirm: React.FC<BookingConfirmProps> = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const  [search, queryData] = useQuery()
-    const orderContext = useOrderContext()
+    const  [search, queryData] = useQuery();
+    const orderContext = useOrderContext();
+    const productContext = useProductContext();
 
     const [newOrder, setNewOrder] = useState({
         product: '', 
@@ -49,32 +51,27 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
       });
 
       useEffect(() => {
-        if(orderContext.orderProduct ){
-          const _product = orderContext.orderProduct as Product
+        if (orderContext.orderProduct && productContext.product) {
+          const _product = productContext.product as Product;
           setNewOrder((prevState) => ({
             ...prevState,
             product: _product._id,
-            totalCost: _product.price
-          }))
+            totalCost: _product.price,
+          }));
         }
-      },[orderContext.orderProduct])
+      }, [orderContext.orderProduct, productContext.product]);
 
     
 
-    console.log("QUERY", queryData)
-    console.log("ORDER PRODUCT", orderContext.orderProduct)
+    // console.log("QUERY", queryData)
+    // console.log("ORDER PRODUCT", orderContext.orderProduct)
+    // console.log('Product Context:', productContext);
+    // console.log("Product", productContext.product)
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const value = e.target.type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value
         const { name } = e.target;
         console.log(name, value)
-        // if(name === "cancellationProtectionFee"){
-        //   return setNewOrder((prevOrder) => ({
-        //     ...prevOrder,
-        //     [name]: value as any,
-        //     totalCost: prevOrder.totalCost + (value as boolean ? 400 : -400)
-        //   }))
-        // }
         setNewOrder((prevOrder) => ({
           ...prevOrder,
           [name]: value as any,
@@ -126,13 +123,13 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
     </div>
     <div className='booking-info' id='booking-info'> 
     <h3>Chosen Cabin</h3>
-    <p>{orderContext.orderProduct?.name}</p>
-    <p>{orderContext.orderProduct?.location}</p>
+    <p> {productContext.product?.name} </p>
+    <p>{productContext.product?.location}</p>
     <h3>Cabin Package</h3>
-    <p>{orderContext.orderProduct?.package}</p>
-    <p>{orderContext.orderProduct?.price}</p>
+    <p>{productContext.product?.package}</p>
+    <p>{productContext.product?.price}</p>
     <h3>Guests</h3>
-    <p>{orderContext.orderProduct?.guests}</p>
+    <p>{productContext.product?.guests}</p>
     <h3>Cancellation Protection Fee</h3>
     <p>500kr</p>
     <input type="checkbox" checked={newOrder.cancellationProtectionFee} name="cancellationProtectionFee" id="check-box" onChange={handleInputChange} />
