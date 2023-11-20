@@ -25,6 +25,7 @@ const Home: React.FC = () => {
     'https://www.chaletvillage.com/wp-content/uploads/2017/01/Romantic-couple-drinking-wine-next-to-the-fireplace.jpg',
     'https://fetch.getnarrativeapp.com/static/b9bae729-a5e8-439a-b0a3-3fa50dc33ba2/Mountain-Gettaway-Couples-Session.jpg?w=1500',
     'https://images.pexels.com/photos/6667978/pexels-photo-6667978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'https://www.degrona.fi/wp-content/uploads/2023/04/tom-the-photographer-kz1PgaeSTww-unsplash-2048x1365.jpg'
 
     // Add more image URLs as needed
   ];
@@ -154,9 +155,9 @@ const Home: React.FC = () => {
           <h1>Image Carousel</h1>
           <ImageCarousel images={images}/>
         </div>
+        <h2>Discover Memorable Retreat Experiences</h2>
         {/* insert image carousel here*/}
         <div className='reviews' id='reviews'>
-        <h2>Discover Memorable Retreat Experiences</h2>
         <Review/>
         <Review/>
         <Review/>  

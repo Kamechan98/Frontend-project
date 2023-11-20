@@ -11,46 +11,67 @@ $black-text: #000000;
     align-items: center;
 
     #facilities-card{
-    border: solid 2px #836e6e;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative;
-    right: 200px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        position: relative;
+        right: 151px;
+    ul{
     li{
         display: flex;
+        margin-left: 10px;
+        align-items: center;
+        padding: 15px;
+        img{
+            padding: 20px;
+        }
+    }
     }
     }
     #amenities-card{
-        border: solid 2px #836e6e;
         border-radius: 20px;
         display: flex;
         position: relative;
-        bottom: 300px;
-        right: 137px;
+        bottom: 286px;
+        right: 210px;
+        width: 400px;
+        height: 200px;
+        flex-direction: column;
+        .container-2{
+            position: relative;
+            left: 200px;
+            bottom: 130px;
+        }
     }
 }
 
 #reservetion-card{
     padding: 20px;
     border-radius: 20px;
-    border: solid 2px #836e6e;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     position: relative;
-    bottom: 180px;
+    bottom: 690px;
     left: 400px;
 }
 
 #reserve-btn{
-    height: 40px;
-    width: 300px;
     border-radius: 10px;
     text-align: center;
     background-color: #CBB26A;
-    font-size: medium;
+    font-size: larger;
+    color: black;
+    text-decoration-line: none;
+    display: block;
 }
 
-#product-reviews{
-    display: inline-flex;
-    flex-direction: row;
+#user-reviews{
+    position: relative;
+    bottom: 100px;
+    #user-review{
+        display: inline-flex;
+        flex-direction: row;
+        margin-left: 20px;
+        margin-bottom: 20px;
+    }
 }

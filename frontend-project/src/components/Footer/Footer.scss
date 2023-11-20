@@ -5,7 +5,7 @@ $white-text:#ffff;
 $black-text: #000000;
 
 .footer {
-    height: 350px;
+    // height: 350px;
     background-color: $primary-color;
     width: 100%;
     position: relative;
@@ -20,7 +20,8 @@ $black-text: #000000;
         flex-direction: column;
         align-items: flex-start;
         text-align: center;
-        margin-right: 250px;
+        margin-right: 120px;
+        margin-top: 50px;
         h3{
             color: #ffff;
         }
@@ -31,6 +32,11 @@ $black-text: #000000;
         .phone, 
         .adress{
         color: #ffff;
+        display: flex;
+        margin-bottom: 40px;
+        p{
+        margin-left: 30px;
+        }
         }
         input{
             background-color: #fff;
@@ -50,8 +56,8 @@ $black-text: #000000;
             left: 215px;
         }
         #logo-img{
-            height: 150px;
-            width: 200px;
+            height: 250px;
+            width: 300px;
         }
     }
     #copyright{
@@ -60,3 +66,19 @@ $black-text: #000000;
         margin: 0; 
     }
 }
+
+    #follow-us{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        #social-medias{
+            display: flex;
+            flex-direction: row;
+            align-content: space-between;
+            img{
+                display: flex;
+                flex-direction: row;
+                padding-left: 80px;
+            }
+        }
+    }

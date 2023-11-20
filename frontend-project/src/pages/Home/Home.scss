@@ -20,7 +20,7 @@ $black-text: #000000;
     flex-direction: row;
     flex-wrap: nowrap;
     padding: 30px;
-    padding-left: 80px;
+    padding-left: 150px;
     p{
         width: 350px;
     }
@@ -115,23 +115,8 @@ $black-text: #000000;
     width: 900px;
 }
 
-// .image-carousel-container{
-//     height: 200px;
-// }
-
 #reviews{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    margin-left: 270px;
+    margin-top: 20px;
 }
-
-
-// margin-top: 10px;
-//     display: block;
-//     color: #fff;
-//     height: 50px;
-//     text-align: center;
-//     border-radius: 5px;
-//     background-color: #e6e6e6;
-//     color: #000;

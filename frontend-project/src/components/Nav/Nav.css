@@ -20,8 +20,9 @@
 .nav-bar p,
 .nav-bar a {
   padding-right: 20px;
-  color: white;
+  color: #CBB26A;
   padding-top: 15px;
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 768px) {

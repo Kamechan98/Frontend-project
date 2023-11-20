@@ -1,5 +1,5 @@
-h1 {
-  display: flex;
+h2 {
+  display: inline-flex;
 }
 
 #product-page {
@@ -7,42 +7,111 @@ h1 {
   flex-direction: column;
   justify-content: space-evenly;
 }
-#product-page h2 {
-  display: flex;
-}
 
-#like-heart {
-  display: flex;
-  justify-content: flex-end;
-  flex-direction: column;
-  align-items: flex-end;
-}
-#like-heart #heart {
+#heart {
   width: 30px;
   height: 30px;
+  position: relative;
+  bottom: 145px;
+  left: 900px;
 }
 
 #card {
   height: 400px;
-  width: 700px;
   display: flex;
   flex-direction: row;
   align-items: normal;
-  border: solid rgb(134, 134, 134) 2px;
-  border-radius: 20px;
   padding: 10px;
   margin-bottom: 20px;
+  margin-left: 10px;
 }
 #card #card-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: space-between;
   position: relative;
-  bottom: 55px;
   left: 10px;
+  border: solid rgb(134, 134, 134) 2px;
+  border-radius: 20px;
+  height: 300px;
+  width: 1300px;
+}
+#card #card-content #card-price {
+  color: #000000;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  background-color: #dadada;
+  opacity: 80%;
+  height: 50px;
+  width: 170px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-align: center;
+}
+#card #card-content #card-price p {
+  margin: 11px;
+  padding: 0;
+  font-size: medium;
+  font-weight: 600;
+}
+#card #card-content h2 {
+  display: inline-flex;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 10px;
+  width: 200px;
 }
 #card #card-content h3 {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  left: 10px;
+  width: 180px;
+}
+#card #card-content ul {
+  list-style-type: none;
+  position: relative;
+  right: 35px;
+}
+#card #card-content ul li {
+  display: inline;
+  margin-left: 10px;
+  font-weight: 600;
+}
+#card #card-content #reviews-stars {
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+  width: 200px;
+}
+#card #card-content #reviews-stars #rating {
+  display: inline;
+  position: relative;
+  bottom: 10px;
+  left: 10px;
+}
+#card #card-content #card-package {
+  color: #000000;
+  position: relative;
+  top: -65px;
+  right: 500px;
+  background-color: #dadada;
+  opacity: 80%;
+  height: 50px;
+  width: 80px;
+  border-radius: 20%;
   text-align: center;
+}
+#card #card-content #card-package p {
+  margin: 11px;
+  padding: 0;
+  font-size: medium;
+  font-weight: 600;
 }
 
 #product-image {
@@ -57,6 +126,9 @@ h1 {
 }
 
 .view-product-btn {
+  position: relative;
+  bottom: 80px;
+  left: 800px;
   height: 40px;
   width: 100px;
   border-radius: 10px;

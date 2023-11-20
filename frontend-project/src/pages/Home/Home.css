@@ -15,7 +15,7 @@
   flex-direction: row;
   flex-wrap: nowrap;
   padding: 30px;
-  padding-left: 80px;
+  padding-left: 150px;
 }
 #about-us #home-info p {
   width: 350px;
@@ -106,8 +106,7 @@
 }
 
 #reviews {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
+  margin-left: 270px;
+  margin-top: 20px;
 }/*# sourceMappingURL=Home.css.map */

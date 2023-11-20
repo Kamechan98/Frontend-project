@@ -1,5 +1,11 @@
 import React from 'react'
 import logo from '../../assets/Logo.svg';
+import location from '../../assets/Location_marker.svg';
+import phone from '../../assets/Phone_logo.svg';
+import mail from '../../assets/Mail_logo.svg';
+import facebook from '../../assets/Facebook_logo.svg';
+import twitter from '../../assets/Twitter_icon.svg';
+import instagram from '../../assets/Instagram_logo.svg';
 import './Footer.scss'
 
 const Footer = () => {
@@ -9,15 +15,24 @@ const Footer = () => {
         <div className='contact-us ft-containers' id='contact-us'>
         <h3>Contact Us</h3>
         <br/>
-        <p className='link'id='link'>Northernnest Retreats</p>
+        <p className='link'id='link'> Northernnest Retreats</p>
         <br/>
-        <p className='adress' id='adress'>Norrskensvägen 235
+        <div className='adress' id='adress'> 
+        <img src={location} alt=""/>
+        <p> Norrskensvägen 235
         235 00 Åre 
         Sweden 
         </p>
-        <p className='phone' id='phone'>+46 123 423 024</p>
+        </div>
+        <div className='phone' id='phone'>
+        <img src={phone} alt=""/>
+        <p> +46 123 423 024</p>
+        </div>
         <br/>
-        <p className='email' id='email'>contact@northernnest.com</p>
+        <div className='email' id='email'>
+        <img src={mail} alt=""/>
+        <p> contact@northernnest.com</p>
+        </div>
         </div>
         <br/>
         
@@ -32,7 +47,12 @@ const Footer = () => {
         </div>
         <div className='ft-container'>
         <div className='follow-us ft-containers' id='follow-us'>
-        <h3>Follow us</h3>  
+        <h3>Follow us</h3> 
+        <div className='social-medias' id='social-medias'>
+        <img src={facebook} alt="facebook" />
+        <img src={twitter} alt="twitter" />
+        <img src={instagram} alt="instagram" /> 
+        </div>
         </div>
         
         </div>

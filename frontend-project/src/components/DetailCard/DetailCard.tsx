@@ -7,6 +7,25 @@ import { useQuery } from '../../utils/types/hooks';
 import { useOrderContext } from '../../Context/OrderContext';
 import { useProductContext } from '../../Context/ProductContext';
 
+import bedding from '../../assets/Bedding.svg';
+import chargingStation from '../../assets/ChargingStation.svg';
+import kingsizedBed from '../../assets/Kingsized Be.svg'
+import kitchen from '../../assets/Kitchen.svg'
+import outdoorDeck from '../../assets/Outdoor deck.svg'
+import parking from '../../assets/Parking.svg'
+import petsAllowed from '../../assets/Pets Allowed.svg'
+import tv from '../../assets/TV.svg'
+import towels from '../../assets/Towels.svg'
+import lounge from '../../assets/grommet-icons_lounge.svg'
+import wifi from '../../assets/Wifi.svg'
+import washingMachine from '../../assets/Washing Machine.svg'
+import guests from '../../assets/guests.svg'
+import reviews from '../../assets/user-review.png'
+
+
+
+
+
 const DetailCard = () => {
 
     const { id } = useParams()
@@ -36,22 +55,46 @@ const DetailCard = () => {
             
             <div className='container-1' id='container-1'>
             <ul>
-             <li>{product.facilities[0]}</li>
-            <li>{product.facilities[1]}</li>
-            <li>{product.facilities[2]}</li>
-            <li>{product.facilities[3]}</li>
-            <li>{product.facilities[4]}</li>
-            <li>{product.facilities[5]}</li>   
+             <li>
+            <img src={petsAllowed} alt="" />
+            {product.facilities[0]}</li>
+            <li>
+            <img src={kitchen} alt="" />
+            {product.facilities[1]}</li>
+            <li>
+            <img src={kingsizedBed} alt="" />
+            {product.facilities[2]}</li>
+            <li>
+            <img src={outdoorDeck} alt="" />
+            {product.facilities[3]}</li>
+            <li>
+            <img src={tv} alt="" />  
+            {product.facilities[4]}</li>
+            <li>
+            <img src={washingMachine} alt="" />
+            {product.facilities[5]}</li>   
             </ul>
             </div>
             <div className='container-2' id='container-2'>
              <ul>
-            <li>{product.facilities[6]}</li>
-            <li>{product.facilities[7]}</li>
-            <li>{product.facilities[8]}</li>
-            <li>{product.facilities[9]}</li>
-            <li>{product.facilities[10]}</li>
-            <li>{product.facilities[11]}</li>
+            <li>
+            <img src={chargingStation} alt="" />  
+            {product.facilities[6]}</li>
+            <li>
+            <img src={wifi} alt="" />
+            {product.facilities[7]}</li>
+            <li>
+            <img src={parking} alt="" />  
+            {product.facilities[8]}</li>
+            <li>
+            <img src={lounge} alt="" />  
+            {product.facilities[9]}</li>
+            <li>
+            <img src={towels} alt="" />
+            {product.facilities[10]}</li>
+            <li>
+            <img src={bedding} alt="" />
+            {product.facilities[11]}</li>
             </ul>            
             </div>
                
@@ -59,8 +102,8 @@ const DetailCard = () => {
 
         <div className='reservetion-card' id='reservetion-card'>
             <div className='container-1' id='container-2'>
-           <p>{product.bedrooms}</p>
-           <p>{product.guests}</p>
+           <p>2 bedrooms</p>
+           <p>2 <img src={guests} alt="" /></p>
             </div>
             <div className='container-2' id='container-2'>
            <p>Check-in Date: {queryData?.startDate}</p>
@@ -94,13 +137,27 @@ const DetailCard = () => {
             </div>
         </div>
         {/* Display other product details */}
-        <div className='product-reviews' id='product-reviews'>
-        <Review/>
-        <Review/>
-        </div>
-        <div className='product-reviews' id='product-reviews'>
-        <Review/>
-        <Review/>
+        <div className='user-reviews' id='user-reviews'>
+          <div className='user-review' id='user-review'>
+            <img src={reviews} alt="reviews" />
+          </div>
+          <div className='user-review' id='user-review'>
+            <img src={reviews} alt="reviews" />
+          </div>
+          <div className='user-review' id='user-review'>
+            <img src={reviews} alt="reviews" />
+          </div>
+        </div >
+        <div className='user-reviews' id='user-reviews'>
+          <div className='user-review' id='user-review'>
+            <img src={reviews} alt="reviews" />
+          </div>
+          <div className='user-review' id='user-review'>
+            <img src={reviews} alt="reviews" />
+          </div>
+          <div className='user-review' id='user-review'>
+            <img src={reviews} alt="reviews" />
+          </div>
         </div>
       </div>
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import heart from '../../assets/Heart.svg';
+import stars from '../../assets/five-star.svg';
 import './ProductCard.scss'
 
 
@@ -42,28 +43,29 @@ const ProductCard: React.FC = () => {
       {products.map((product) => {
         const productUrl = `/products/${product._id}${location.search}`
         return (
-          <div className='card' id='card'
-          >
+          <div className='card' id='card'>
           <Link to={productUrl}></Link>
             <React.Fragment key={product?._id || ''}>
               <div className='product-image' id='product-image'>
-              <h2>{product.name ? product.name : 'Unavailable'}</h2>
               <img className='p-image' id='p-image' src={product.imgURLs[0]} alt="Image of house" />
             </div>
             <div className='card-content' id='card-content'>
+            <div className='card-price' id='card-price'> 
+            <p>{product.price ? product.price : 'Unavailable'}
+              SEK per night</p>
+            </div>
+            <h2>{product.name ? product.name : 'Unavailable'}</h2>
+            <div className='card-package' id='card-package'>
+            <p>{product.package ? product.package : 'Unavailable'}</p>
+            </div>
               <h3>
               {product.description ? product.description : 'Unavailable'}
             </h3>
-            <div className='like-heart' id='like-heart'>
-              <img src={heart} className='heart' id='heart' alt="like-symbol"/>
-              </div>
+              <img src={heart} className='heart' id='heart' alt="like-symbol"/>            
             <ul>
             <li>
               {product.price ? product.price : 'Unavailable'}
               SEK per night</li>
-              <li>
-              {product.package ? product.package : 'Unavailable'}
-            </li>
               <li>
               {product.location ? product.location : 'Unavailable'}
             </li>
@@ -76,13 +78,15 @@ const ProductCard: React.FC = () => {
               <li>
               {product.bedrooms ? product.bedrooms : 'Unavailable'}
             </li>
-              <li>
-              {product.rating ? product.rating : 'Unavailable'}
-            </li>
             </ul>
+            <div className='reviews-stars' id='reviews-stars'>
+            <img src={stars} alt="stars" />
+            <p className='rating' id='rating'>
+            {product.rating ? product.rating : 'Unavailable'}
+            </p>
+            </div>
             <div className='view-deal'>
               <Link className='view-product-btn' id='view-product-btn' to={productUrl}> View Deal</Link>
-              {/* <button className='view-product-btn' id='view-product-btn'>View Deal</button> */}
             </div>
             </div>
           </React.Fragment>
