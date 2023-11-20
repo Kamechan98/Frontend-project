@@ -4,6 +4,14 @@ $third-color:#CBB26A;
 $white-text:#ffff;
 $black-text: #000000;
 
+h1, h2, h3{
+    font-family: "Libre Baskerville", serif;
+}
+
+p{
+    font-family: 'Lora', serif;
+}
+
 #hero-img{
     display: flex;
     justify-content: flex-start;
@@ -56,6 +64,7 @@ $black-text: #000000;
         margin-top: 25%;
         margin-right: 15px;
         margin-left: 15px;
+
     } 
     #package-list{
     margin-top: 10px;
@@ -82,6 +91,7 @@ $black-text: #000000;
 #packages{
     display: flex;
     .headline{
+        font-family: "Libre Baskerville", serif;
         text-align: center;
     }
     #package-info{

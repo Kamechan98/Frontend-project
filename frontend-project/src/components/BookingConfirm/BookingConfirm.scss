@@ -1,16 +1,19 @@
 $primary-color:#486349;
 $secondary-color:#D8C690;
 $third-color:#CBB26A;
+$background-color: #F0F0F0;
 $white-text:#ffff;
 $black-text: #000000;
 
 
 #container {
+    font-family: "Lora", serif;
     width: 800px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 300px;
+    background-color: #F0F0F0;
     .Booking-info-headline{
         background-color:#486349;
         color: #ffff;
@@ -83,10 +86,6 @@ $black-text: #000000;
             top: -45px;
             img{
                 width: 150px;
-            }
-            #radio-btn{
-                background-color: #fff;
-                color: #000000;
             }
         }
         

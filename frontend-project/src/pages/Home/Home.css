@@ -1,3 +1,11 @@
+h1, h2, h3 {
+  font-family: "Libre Baskerville", serif;
+}
+
+p {
+  font-family: "Lora", serif;
+}
+
 #hero-img {
   display: flex;
   justify-content: flex-start;
@@ -73,6 +81,7 @@
   display: flex;
 }
 #packages .headline {
+  font-family: "Libre Baskerville", serif;
   text-align: center;
 }
 #packages #package-info {

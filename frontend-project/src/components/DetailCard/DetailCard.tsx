@@ -6,7 +6,6 @@ import Review from '../Review/Review';
 import { useQuery } from '../../utils/types/hooks';
 import { useOrderContext } from '../../Context/OrderContext';
 import { useProductContext } from '../../Context/ProductContext';
-
 import bedding from '../../assets/Bedding.svg';
 import chargingStation from '../../assets/ChargingStation.svg';
 import kingsizedBed from '../../assets/Kingsized Be.svg'
@@ -109,7 +108,7 @@ const DetailCard = () => {
            <p>Check-in Date: {queryData?.startDate}</p>
            <p>Check-out Date {queryData?.endDate}</p>
             </div>
-           <h3>Total: Price  10.000 SEK</h3>
+           <h3>Total: {orderContext.orderProduct?.price}</h3>
            <Link to={`/booking-confirmation?${search}`} className='reserve-btn' id='reserve-btn' onClick={() => {
             orderContext.setOrderProduct(product)
            }}>

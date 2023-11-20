@@ -1,9 +1,11 @@
 #container {
+  font-family: "Lora", serif;
   width: 800px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   margin-left: 300px;
+  background-color: #F0F0F0;
 }
 #container .Booking-info-headline {
   background-color: #486349;
@@ -76,10 +78,6 @@
 }
 #container #booking-form #payment-options img {
   width: 150px;
-}
-#container #booking-form #payment-options #radio-btn {
-  background-color: #fff;
-  color: #000000;
 }
 #container #confirm-btn {
   height: 40px;

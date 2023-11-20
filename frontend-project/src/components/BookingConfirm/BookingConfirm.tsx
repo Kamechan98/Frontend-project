@@ -170,7 +170,8 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
         <div className={option.name} id={option.name} key={option.name}>
           <input 
             type="radio" 
-            name="paymentMethod" 
+            name="paymentMethod"
+            id='radio-btn' 
             value={option.name} 
             checked={newOrder.paymentMethod === option.name} 
             onChange={handleInputChange}/>
