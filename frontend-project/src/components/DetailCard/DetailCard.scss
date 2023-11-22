@@ -79,8 +79,118 @@ $black-text: #000000;
 
 
 @media only screen and (max-width: 528px) {
-    // .nav-bar {
-    //     width: 100%;
-    //     height: 200px;
-    // }
+    p{
+        padding: 0px;
+        margin: 0px;
+        width: 120px;
+    }
+    #detail-card{
+        font-family: "Lora", serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        #facilities-card{
+            position: relative;
+            right: 30px;
+            bottom: 25px;
+            .container-1{
+                position: relative;
+                bottom: 10px;
+            }
+        ul{
+            margin-top: 0px;
+            height: 710px;
+        li{
+            display: flex;
+            margin-left: 10px;
+            align-items: center;
+            padding: 15px;
+            font-size: 15px;
+            img{
+                padding: 20px;
+            }
+        }
+        }
+        }
+        #amenities-card{
+        h3{
+            margin-bottom: 0px;
+            margin-left: 65px;
+            margin-top: 45px;
+        }
+        border-radius: 20px;
+        display: flex;
+        position: relative;
+        bottom: 90px;
+        left: -35px;
+        flex-direction: column;
+        margin-bottom: 30px;
+        .container-2{
+            position: relative;
+            left: 200px;
+            bottom: 287px;
+        }
+        ul{
+            width: 200px;
+            li{
+                display: flex;
+                margin-left: 10px;
+                align-items: center;
+                padding: 15px;
+                width: 120px;
+                font-size: 15px;
+                img{
+                    padding: 20px;
+                }
+            }
+            }
+            flex-direction: column;
+        }
+    }
+    
+    #reservetion-card{
+   display: none;
+    }
+    
+    #reserve-btn{
+        border-radius: 10px;
+        text-align: center;
+        background-color: #CBB26A;
+        font-size: larger;
+        color: black;
+        text-decoration-line: none;
+        display: block;
+    }
+    
+    #user-reviews{
+        position: relative;
+        bottom: 0px;
+        position: relative;
+        bottom: 0px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+        #user-review{
+        display: inline-flex;
+        flex-direction: row;
+        margin-left: 0px;
+        margin-bottom: 20px;
+        height: 160px;
+        width: 130px;
+        }
+    }
+    #reservetion-card-mobile {
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        width: 55%;
+        background-color: rgb(136, 136, 136);
+        left: 0px;
+        position: fixed;
+        bottom: 39%;
+        z-index: 100;
+        height: 13%;
+    }
+    
 }
+

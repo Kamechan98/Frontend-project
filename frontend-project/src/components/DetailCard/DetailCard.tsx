@@ -158,6 +158,22 @@ const DetailCard = () => {
             <img src={reviews} alt="reviews" />
           </div>
         </div>
+        <div className='reservetion-card-mobile' id='reservetion-card-mobile'>
+            <div className='container-1' id='container-2'>
+           <p>2 bedrooms</p>
+           <p>2 <img src={guests} alt="" /></p>
+            </div>
+            <div className='container-2' id='container-2'>
+           <p>Check-in Date: {queryData?.startDate}</p>
+           <p>Check-out Date {queryData?.endDate}</p>
+            </div>
+           <h3>Total: {orderContext.orderProduct?.price}</h3>
+           <Link to={`/booking-confirmation?${search}`} className='reserve-btn' id='reserve-btn' onClick={() => {
+            orderContext.setOrderProduct(product)
+           }}>
+            Reserve
+           </Link>
+        </div>
       </div>
 
     )}
