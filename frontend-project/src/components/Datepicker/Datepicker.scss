@@ -1,0 +1,162 @@
+$primary-color:#486349;
+$secondary-color:#D8C690;
+$third-color:#CBB26A;
+$white-text:#ffff;
+$black-text: #000000;
+
+.date-pick {
+    // display: flex;  
+    font-family: "Lora", serif;;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 700px;
+    width: 100%;
+    margin: auto;
+    margin-top: 20%;
+    margin-left: 50%;
+    padding: 6px 15px;
+    border-radius: 25px;
+    box-shadow: rgba(0, 0, 0, 0.9) 0px 8px 24px;
+    background-color: rgba(247, 247, 247, 0.9);
+    .label{
+        font-size: 0.78rem;
+        padding-bottom: 2px;
+        margin-top: 25%;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+    .DatePicker{
+        background-color: transparent;
+        border: none;
+        margin-top: 10px;
+        display: block;
+        color: #fff;
+        height: 50px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #e6e6e6;
+        color: #000;
+    }
+
+    .date-from, .date-to, #package-list{
+        border-right: 1px solid #4c4c4c;
+     }
+
+    .DatePicker, #package-list:focus{
+       border: #000;
+    }
+
+    #package-dropdown-list{
+       label {
+        margin-top: 25%;
+        margin-right: 15px;
+        margin-left: 15px;
+
+    } 
+    #package-list{
+    font-family: "Lora", serif;
+    margin-top: 10px;
+    color: #fff;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #000;
+    border: none;
+    }
+    }
+    #select-btn{
+        margin-top: 10px;
+        margin-left: 20px;
+        height: 50px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: #CBB26A;
+        color: #fff;
+    }
+    
+}
+
+@media screen and (max-width: 520px) {
+    .date-pick {
+    display: flex;        
+    flex-direction: column;
+    max-width: 90%;
+    margin: auto 1rem;
+    margin-top: 10%;
+
+    .DatePicker{
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+    display: block;
+    color: #fff;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    color: #000;
+    }
+    
+    .date-from, .date-to, #package-list{
+    // width: 100%;
+    padding: 0.2rem;
+    border-right: transparent;
+    font-size: 0.8rem;
+    }
+    
+    .label{
+        padding: 0.4rem 0;
+    }
+
+    .DatePicker, #package-list:focus{
+    border: #000;
+    }
+    
+        #package-dropdown-list{
+            background-color: transparent;
+            border: none;
+            margin-top: 10px;
+            display: block;
+            color: #fff;
+            height: 50px;
+            text-align: center;
+            border-radius: 5px;
+            background-color: #e6e6e6;
+            color: #000;
+            padding-bottom: 20px;
+            width: -webkit-fill-available;
+            label {
+            font-size: 0.8rem;          
+            } 
+        #package-list{
+        font-family: "Lora", serif;
+        margin-top: 10px;
+        color: #fff;
+        height: 50px;
+        text-align:center;
+        margin-left: 9px;
+        border-radius: 5px;
+        background-color: transparent;
+        color: #000;
+        border: none;
+        width: 175px;
+        option{
+            width: auto;
+            }
+        }
+    }
+        #select-btn{
+            margin-top: 10px;
+            margin-left: 20px;
+            height: 50px;
+            text-align: center;
+            border-radius: 15px;
+            background-color: #CBB26A;
+            color: #fff;
+            width: 85%;
+        }
+
+    }
+}

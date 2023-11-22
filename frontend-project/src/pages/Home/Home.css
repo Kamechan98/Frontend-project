@@ -9,10 +9,10 @@ p {
 #hero-img {
   display: flex;
   justify-content: flex-start;
-}
-#hero-img img {
+  background: url("https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc0NTAyNjY2ODg0MzYwMTM3/isnt-it-lovely-a-poem.jpg") no-repeat center/cover;
+  display: flex;
   width: 100%;
-  height: 850px;
+  height: 500px;
 }
 
 #about-us {
@@ -31,50 +31,6 @@ p {
 
 .headline {
   text-align: center;
-}
-
-.date-pick {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.date-pick .label {
-  margin-top: 25%;
-  margin-right: 15px;
-  margin-left: 15px;
-}
-.date-pick .DatePicker {
-  margin-top: 10px;
-  display: block;
-  color: #fff;
-  height: 50px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #e6e6e6;
-  color: #000;
-}
-.date-pick #package-dropdown-list label {
-  margin-top: 25%;
-  margin-right: 15px;
-  margin-left: 15px;
-}
-.date-pick #package-dropdown-list #package-list {
-  margin-top: 10px;
-  color: #fff;
-  height: 50px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #e6e6e6;
-  color: #000;
-}
-.date-pick #select-btn {
-  margin-top: 10px;
-  margin-left: 20px;
-  height: 50px;
-  text-align: center;
-  border-radius: 5px;
-  background-color: #CBB26A;
-  color: #fff;
 }
 
 #packages {
@@ -118,4 +74,76 @@ p {
   display: inline-block;
   margin-left: 270px;
   margin-top: 20px;
+}
+
+@media only screen and (max-width: 528px) {
+  h1 {
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  p {
+    font-size: 16px;
+  }
+  #about-us {
+    padding: 10px;
+  }
+  #about-us #home-info {
+    display: flex;
+    flex-direction: column;
+    justify-self: flex-start;
+    padding: 0;
+    text-align: center;
+  }
+  #about-us #home-info p {
+    text-align: center;
+  }
+  .headline {
+    text-align: center;
+  }
+  #packages {
+    display: flex;
+  }
+  #packages .headline {
+    font-family: "Libre Baskerville", serif;
+    text-align: center;
+  }
+  #packages #package-info {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+  #packages #package-info #package {
+    padding-left: 0px;
+  }
+  #packages #package-info #package-img {
+    height: 350px;
+    width: 350px;
+  }
+  #packages #package-info p {
+    width: 350px;
+  }
+  #packages #package-info #symbol {
+    height: 30px;
+    width: 30px;
+    margin-left: 10px;
+  }
+  #activities {
+    position: relative;
+    left: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 900px;
+  }
+  #reviews {
+    display: flex;
+    margin-left: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=Home.css.map */

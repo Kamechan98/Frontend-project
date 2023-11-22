@@ -27,4 +27,35 @@ h2 {
 #review-container #review-card #user-review #review {
   width: 270px;
   height: 100px;
+}
+
+@media only screen and (max-width: 528px) {
+  #review-container {
+    display: inline-block;
+  }
+  #review-container #review-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 20px;
+  }
+  #review-container #review-card #user-review {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #review-container #review-card #user-review #user-img {
+    border-radius: 100%;
+    height: 100px;
+    width: 100px;
+  }
+  #review-container #review-card #user-review #review-stars {
+    width: 100px;
+  }
+  #review-container #review-card #user-review #review {
+    width: 270px;
+    height: 100px;
+    text-align: center;
+    padding-bottom: 10px;
+  }
 }/*# sourceMappingURL=Review.css.map */

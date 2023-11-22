@@ -1,0 +1,141 @@
+.date-pick {
+  font-family: "Lora", serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 700px;
+  width: 100%;
+  margin: auto;
+  margin-top: 20%;
+  margin-left: 50%;
+  padding: 6px 15px;
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 8px 24px;
+  background-color: rgba(247, 247, 247, 0.9);
+}
+.date-pick .label {
+  font-size: 0.78rem;
+  padding-bottom: 2px;
+  margin-top: 25%;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.date-pick .DatePicker {
+  background-color: transparent;
+  border: none;
+  margin-top: 10px;
+  display: block;
+  color: #fff;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #e6e6e6;
+  color: #000;
+}
+.date-pick .date-from, .date-pick .date-to, .date-pick #package-list {
+  border-right: 1px solid #4c4c4c;
+}
+.date-pick .DatePicker, .date-pick #package-list:focus {
+  border: #000;
+}
+.date-pick #package-dropdown-list label {
+  margin-top: 25%;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+.date-pick #package-dropdown-list #package-list {
+  font-family: "Lora", serif;
+  margin-top: 10px;
+  color: #fff;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: transparent;
+  color: #000;
+  border: none;
+}
+.date-pick #select-btn {
+  margin-top: 10px;
+  margin-left: 20px;
+  height: 50px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #CBB26A;
+  color: #fff;
+}
+
+@media screen and (max-width: 520px) {
+  .date-pick {
+    display: flex;
+    flex-direction: column;
+    max-width: 90%;
+    margin: auto 1rem;
+    margin-top: 10%;
+  }
+  .date-pick .DatePicker {
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+    display: block;
+    color: #fff;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    color: #000;
+  }
+  .date-pick .date-from, .date-pick .date-to, .date-pick #package-list {
+    padding: 0.2rem;
+    border-right: transparent;
+    font-size: 0.8rem;
+  }
+  .date-pick .label {
+    padding: 0.4rem 0;
+  }
+  .date-pick .DatePicker, .date-pick #package-list:focus {
+    border: #000;
+  }
+  .date-pick #package-dropdown-list {
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+    display: block;
+    color: #fff;
+    height: 50px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    color: #000;
+    padding-bottom: 20px;
+    width: -webkit-fill-available;
+  }
+  .date-pick #package-dropdown-list label {
+    font-size: 0.8rem;
+  }
+  .date-pick #package-dropdown-list #package-list {
+    font-family: "Lora", serif;
+    margin-top: 10px;
+    color: #fff;
+    height: 50px;
+    text-align: center;
+    margin-left: 9px;
+    border-radius: 5px;
+    background-color: transparent;
+    color: #000;
+    border: none;
+    width: 175px;
+  }
+  .date-pick #package-dropdown-list #package-list option {
+    width: auto;
+  }
+  .date-pick #select-btn {
+    margin-top: 10px;
+    margin-left: 20px;
+    height: 50px;
+    text-align: center;
+    border-radius: 15px;
+    background-color: #CBB26A;
+    color: #fff;
+    width: 85%;
+  }
+}/*# sourceMappingURL=Datepicker.css.map */

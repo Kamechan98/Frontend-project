@@ -15,10 +15,10 @@ p{
 #hero-img{
     display: flex;
     justify-content: flex-start;
-    img{
-        width: 100%;
-        height: 850px;
-    }
+    background: url('https://images.saymedia-content.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_1200/MTc0NTAyNjY2ODg0MzYwMTM3/isnt-it-lovely-a-poem.jpg') no-repeat center/cover;
+    display: flex;
+    width: 100%;
+    height: 500px;
 }
 
 #about-us{
@@ -39,54 +39,7 @@ p{
     text-align: center;
 }
 
-.date-pick {
-    display: flex;    
-    flex-direction: row;
-    justify-content: center;
-    .label{
-        margin-top: 25%;
-        margin-right: 15px;
-        margin-left: 15px;
-    }
-    .DatePicker{
-        margin-top: 10px;
-        display: block;
-        color: #fff;
-        height: 50px;
-        text-align: center;
-        border-radius: 5px;
-        background-color: #e6e6e6;
-        color: #000;
-    }
 
-    #package-dropdown-list{
-       label {
-        margin-top: 25%;
-        margin-right: 15px;
-        margin-left: 15px;
-
-    } 
-    #package-list{
-    margin-top: 10px;
-    color: #fff;
-    height: 50px;
-    text-align: center;
-    border-radius: 5px;
-    background-color: #e6e6e6;
-    color: #000; 
-    }
-    }
-    #select-btn{
-        margin-top: 10px;
-        margin-left: 20px;
-        height: 50px;
-        text-align: center;
-        border-radius: 5px;
-        background-color: #CBB26A;
-        color: #fff;
-    }
-    
-}
 
 #packages{
     display: flex;
@@ -129,4 +82,89 @@ p{
     display: inline-block;
     margin-left: 270px;
     margin-top: 20px;
+}
+
+
+    @media only screen and (max-width: 528px) {
+
+        // Iphone XR
+
+        h1{
+            font-size: 24px;
+        }
+        h2{
+            font-size: 20px;
+        }
+        h3{
+            font-size: 16px;
+        }
+        p{
+            font-size: 16px;
+        }
+        
+    
+    #about-us{
+        padding: 10px;  
+        #home-info{
+        display: flex;
+        flex-direction: column;
+        justify-self: flex-start;
+        padding: 0;
+        text-align: center;
+        p{
+            // width: 260px;
+            text-align: center;
+            // padding-left: 40px;
+        }
+        }
+    }
+    
+    .headline {
+        text-align: center;
+    }
+    
+    
+    #packages{
+        display: flex;
+        .headline{
+            font-family: "Libre Baskerville", serif;
+            text-align: center;
+        }
+        #package-info{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            #package{
+                padding-left: 0px;
+            }
+            #package-img{
+                height: 350px;
+                width: 350px;
+            }
+            p{
+                width: 350px;
+            }
+            #symbol{
+                height: 30px;
+                width: 30px;
+                margin-left: 10px;
+            }   
+        }
+    }
+    
+    #activities {
+        position: relative;
+        left: 0px;
+        display: flex;
+        flex-direction: column;
+        width: 900px;
+    }
+    
+    #reviews{
+    display: flex;
+    margin-left: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    }
 }

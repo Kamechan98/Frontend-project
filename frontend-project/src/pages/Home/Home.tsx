@@ -1,21 +1,11 @@
 import React, {useState} from 'react'
-import DatePicker, {registerLocale } from 'react-datepicker';
-import { useNavigate } from 'react-router-dom';
 import 'react-datepicker/dist/react-datepicker.css'
 import './Home.scss'
-import HeroImg from '../../assets/Heroimg.png';
-import en from 'date-fns/locale/en-GB';
 import Review from '../../components/Review/Review';
 import ImageCarousel from '../../components/ImageCarousel/ImageCarousel';
-registerLocale('en-GB', en);
+import Datepicker from '../../components/Datepicker/DatePicker';
 
 const Home: React.FC = () => {
-
-  const navigate = useNavigate()
-
-  const [startDate, setStartDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
-  const [selectedPackage, setSelectedPackage] = useState<string>("All")
 
 
   const images = [
@@ -30,33 +20,15 @@ const Home: React.FC = () => {
     // Add more image URLs as needed
   ];
 
-  const handleSearch = () => {
-    const params = new URLSearchParams()
-    const formatDate = (date: Date) => {
-      return `${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}`
-    }
-    if(startDate) {
-      params.append("startDate", formatDate(startDate))
-    }
-    if(endDate) {
-      params.append("endDate", formatDate(endDate))
-
-    }
-    if(selectedPackage !== "All"){
-      params.append("selectedPackage", selectedPackage)
-    }
-    
-    const url =`/products?${params}`
-    console.log("URL", url)
-    navigate(url)
-  }
-
   return (
   <div>
     <div className='hero-img' id='hero-img'>
-    <img src={HeroImg} alt="hero image" />
+    {/* <img src={HeroImg} alt="hero image" /> */}
+    <Datepicker/>
+
     </div>
-    <div id='date-pick' className='date-pick'>
+
+    {/* <form id='date-pick' className='date-pick'>
       <div>
       <label className='label' id='label'>Check-In Date:</label>
       <DatePicker className='DatePicker' id='DatePicker'
@@ -69,6 +41,7 @@ const Home: React.FC = () => {
         locale="en-GB" // If you're specifying a locale
       />
       </div>
+
       <div>
       <label className='label' id='label'>Check-Out Date:</label>
       <DatePicker className='DatePicker' id='DatePicker'
@@ -95,7 +68,7 @@ const Home: React.FC = () => {
     </select> 
       </div>
      <button className='select-btn' id='select-btn' onClick={handleSearch}>Search</button>
-     </div>
+     </form> */}
       <div className='about us' id='about-us'>
      <h2 className='headline'>About us</h2>
       <div className='home-info' id='home-info'>
@@ -152,7 +125,6 @@ const Home: React.FC = () => {
 
       <h2 className='headline'>Explore our activities</h2>
       <div className='activities' id='activities'>
-          <h1>Image Carousel</h1>
           <ImageCarousel images={images}/>
         </div>
         <h2>Discover Memorable Retreat Experiences</h2>
