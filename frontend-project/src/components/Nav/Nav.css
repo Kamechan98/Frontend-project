@@ -80,7 +80,7 @@
     position: relative;
     top: 0px;
     width: 100px;
-    left: 260px;
+    left: 255px;
   }
   /* Hide checkbox */
   #menu-toggle:checked + .nav-links {

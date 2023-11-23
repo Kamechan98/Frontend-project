@@ -30,14 +30,16 @@ const PaymentConfirm = () => {
       
       {order && (
       <div>
-        <h3>Thank you for your payment!</h3>
-        <p>Total payment amount</p>
-        <h4> {order.totalCost || 'N/A'} </h4>
-        <h4> {order.product.name} </h4>
-        <p>Booking Reference</p>
-        <h4>{order.bookingReference || 'N/A'}</h4>
-        <p>A Receipt for this transaction has been sent to this email:</p>
-        <p>{userEmail}</p>
+        <h2>Thank you for your payment!</h2>
+        <h3 className='text'>Total payment amount</h3>
+        <p className='payment-headline'> {order.totalCost || 'N/A'} SEK </p>
+        <br/>
+        <h3 className='payment-headline'> {order.product.name} </h3>
+        <br/>
+        <h3 className='payment-headline' >Booking Reference</h3>
+        <p className='text'>{order.bookingReference || 'N/A'}</p>
+        <h3 className='text' >A Receipt for this transaction has been sent to this email:</h3>
+        <p className='text'>{userEmail}</p>
         <br/>
       <div className='order-img' id='order-img'>
         <img src={order.product.imgURLs[0]} alt="img" />

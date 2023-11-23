@@ -46,4 +46,13 @@
   text-align: center;
   background-color: #CBB26A;
   font-size: medium;
+}
+
+@media only screen and (max-width: 528px) {
+  .container #reg-form input {
+    width: 40%;
+  }
+  .container #reg-form .reg-btn {
+    width: 40%;
+  }
 }/*# sourceMappingURL=Register.css.map */

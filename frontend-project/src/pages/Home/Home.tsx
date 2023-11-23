@@ -23,52 +23,9 @@ const Home: React.FC = () => {
   return (
   <div>
     <div className='hero-img' id='hero-img'>
-    {/* <img src={HeroImg} alt="hero image" /> */}
     <Datepicker/>
-
     </div>
-
-    {/* <form id='date-pick' className='date-pick'>
-      <div>
-      <label className='label' id='label'>Check-In Date:</label>
-      <DatePicker className='DatePicker' id='DatePicker'
-        selectsStart
-        selected={startDate}
-        onChange={(date: Date) => setStartDate(date)}
-        startDate={startDate}
-        endDate={endDate}
-        placeholderText="Start Date"
-        locale="en-GB" // If you're specifying a locale
-      />
-      </div>
-
-      <div>
-      <label className='label' id='label'>Check-Out Date:</label>
-      <DatePicker className='DatePicker' id='DatePicker'
-        selectsEnd
-        selected={endDate}
-        onChange={(date: Date) => setEndDate(date)}
-        startDate={startDate}
-        endDate={endDate}
-        minDate={startDate}
-        placeholderText="End Date"
-        locale="en-GB" // If you're specifying a locale
-      />
-      </div>
-      <div className='package-dropdown-list' id='package-dropdown-list'>
-    <label>Packages:</label>
-    <select
-      value={selectedPackage}
-      onChange={(e) => setSelectedPackage(e.target.value)}
-    name="package-list" id="package-list">
-    <option value="All">All</option>
-    <option value="Budget">Budget</option>
-    <option value="Standard">Standard</option>
-    <option value="Deluxe">Deluxe</option>
-    </select> 
-      </div>
-     <button className='select-btn' id='select-btn' onClick={handleSearch}>Search</button>
-     </form> */}
+    
       <div className='about us' id='about-us'>
      <h2 className='headline'>About us</h2>
       <div className='home-info' id='home-info'>
@@ -124,9 +81,10 @@ const Home: React.FC = () => {
         </div> 
 
       <h2 className='headline'>Explore our activities</h2>
-      <div className='activities' id='activities'>
+      <div className='activities' id='carousell'>
           <ImageCarousel images={images}/>
-        </div>
+
+      </div>
         <h2>Discover Memorable Retreat Experiences</h2>
         {/* insert image carousel here*/}
         <div className='reviews' id='reviews'>

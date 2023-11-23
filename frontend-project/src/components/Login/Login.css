@@ -37,7 +37,7 @@
   color: #000000;
   border-radius: 10px;
   height: 30px;
-  width: 80%;
+  width: 40%;
 }
 .container #login-form #error-msg {
   color: firebrick;
@@ -57,4 +57,13 @@
   text-align: center;
   background-color: #CBB26A;
   font-size: medium;
+}
+
+@media only screen and (max-width: 528px) {
+  .container #login-form input {
+    width: 40%;
+  }
+  .container #login-form .login-btn {
+    width: 40%;
+  }
 }/*# sourceMappingURL=Login.css.map */

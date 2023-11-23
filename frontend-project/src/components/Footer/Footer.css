@@ -36,21 +36,30 @@
   margin-left: 30px;
 }
 .footer .ft-containers input {
-  background-color: #fff;
-  border-radius: 15px;
+  font-family: "Lora", serif;
+  border: none;
+  margin-top: 10px;
+  width: 225px;
+  display: block;
   height: 50px;
-  width: 100%;
   text-align: center;
+  border-radius: 10px;
+  background-color: #e6e6e6;
+  color: #000;
 }
 .footer .ft-containers #newsletter-btn {
-  background-color: white;
-  color: #000000;
-  border-radius: 15px;
-  height: 55px;
-  width: 40%;
+  font-family: "Lora", serif;
+  border: none;
+  margin-top: 10px;
+  display: block;
+  height: 52px;
+  text-align: center;
+  border-radius: 10px;
+  background-color: #e6e6e6;
+  color: rgba(0, 0, 0, 0.4901960784);
   position: relative;
-  bottom: 55px;
-  left: 215px;
+  bottom: 62px;
+  left: 200px;
 }
 .footer .ft-containers #logo-img {
   height: 250px;
@@ -81,7 +90,7 @@
 @media only screen and (max-width: 528px) {
   .footer {
     background-color: #486349;
-    width: 390px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -93,9 +102,9 @@
   .footer .ft-containers {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     text-align: center;
-    margin-left: 5px;
+    margin-left: 30px;
     margin-top: 5px;
     width: 240px;
   }
@@ -118,21 +127,20 @@
     margin-left: 30px;
   }
   .footer .ft-containers input {
-    background-color: #fff;
-    border-radius: 15px;
+    font-family: "Lora", serif;
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+    display: block;
+    color: #fff;
     height: 50px;
-    width: 100%;
     text-align: center;
+    border-radius: 5px;
+    background-color: #e6e6e6;
+    color: #000;
   }
   .footer .ft-containers #newsletter-btn {
-    background-color: white;
-    color: #000000;
-    border-radius: 15px;
-    height: 55px;
-    width: 40%;
-    position: relative;
-    bottom: 55px;
-    left: 215px;
+    display: none;
   }
   .footer .ft-containers #logo-img {
     height: 220px;
@@ -145,6 +153,8 @@
     padding: 0;
     margin: 0;
     width: 300px;
+    position: relative;
+    left: 30px;
   }
   #follow-us {
     display: flex;

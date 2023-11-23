@@ -47,11 +47,11 @@ element.style {
     width: 400px;
   }
   .slick-list {
-    width: 600px;
+    width: 330px;
   }
   .slick-next {
     position: absolute;
-    left: 510px;
+    left: 345px;
   }
   .slick-slider {
     width: 300px;
@@ -59,7 +59,7 @@ element.style {
   .slick-dots {
     position: absolute;
     bottom: -25px;
-    left: 100px;
+    left: 50px;
     display: block;
     width: 100%;
     padding: 0;
@@ -76,6 +76,11 @@ element.style {
     -o-object-fit: cover;
        object-fit: cover;
     padding-left: 9%;
+  }
+  .slick-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
   element.style {
     width: auto;

@@ -25,9 +25,16 @@ $black-text: #000000;
         flex-direction: column;
         align-items: center;
     }
+    .payment-headline{
+        font-size: 16px;
+    }
+    .text{
+        font-size: 16px;
+        width: 235px;
+    }
 }
 #order-img{
-    // height: 415px;
+    margin-left: -123px;
     width: 300px;
     img{
         height: 400px;
@@ -36,13 +43,9 @@ $black-text: #000000;
 
 
 @media only screen and (max-width: 528px) {
-    // .nav-bar {
-    //     width: 330px;
-    //     height: 200px;
-    // }
 
     .container{
-        width: 330px;
+        width: 350px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -65,8 +68,10 @@ $black-text: #000000;
     }
     #order-img{
         width: 300px;
+        margin-left: 40px;
         img{
-            height: 200px;
+            height: 170px;
+            // margin-left: 40px;
         }
     }
 

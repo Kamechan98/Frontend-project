@@ -41,7 +41,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
 const elements = document.querySelectorAll<HTMLElement>('.slick-slide');
 
 
-
+  // return null
   return (
     <div className='im-container'>
       <Slider {...settings}>

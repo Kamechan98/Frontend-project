@@ -70,12 +70,8 @@ p{
     }
 }
 
-#activities {
-    position: relative;
-    left: 500px;
-    display: flex;
-    flex-direction: column;
-    width: 900px;
+#carousell{
+    margin-left: 30px;
 }
 
 #reviews{
@@ -87,7 +83,7 @@ p{
 
     @media only screen and (max-width: 528px) {
 
-        // Iphone 12 PRO
+        // Iphone 14 PRO MAX
 
         h1{
             font-size: 24px;

@@ -46,6 +46,7 @@ const DetailCard = () => {
     <div>
     {product && (
       <div className='detail-card' id='detail-card'>
+       
         <h2 className='product-name' id='product-name'>{product.name}</h2>
         <ImageCarousel images={product.imgURLs}/>
         <h2 className='product-desc'>{product.description}</h2>
@@ -56,44 +57,44 @@ const DetailCard = () => {
             <ul>
              <li>
             <img src={petsAllowed} alt="" />
-            {product.facilities[0]}</li>
+            {product.facilities[0]  || 'X'} </li>
             <li>
             <img src={kitchen} alt="" />
-            {product.facilities[1]}</li>
+            {product.facilities[1]  || 'X'}</li>
             <li>
             <img src={kingsizedBed} alt="" />
-            {product.facilities[2]}</li>
+            {product.facilities[2]  || 'X'}</li>
             <li>
             <img src={outdoorDeck} alt="" />
-            {product.facilities[3]}</li>
+            {product.facilities[3]  || 'X'}</li>
             <li>
             <img src={tv} alt="" />  
-            {product.facilities[4]}</li>
+            {product.facilities[4]  || 'X'}</li>
             <li>
             <img src={washingMachine} alt="" />
-            {product.facilities[5]}</li>   
+            {product.facilities[5] || 'X'}</li>   
             </ul>
             </div>
             <div className='container-2' id='container-2'>
              <ul>
             <li>
             <img src={chargingStation} alt="" />  
-            {product.facilities[6]}</li>
+            {product.facilities[6]  || 'X'}</li>
             <li>
             <img src={wifi} alt="" />
-            {product.facilities[7]}</li>
+            {product.facilities[7]  || 'X'}</li>
             <li>
             <img src={parking} alt="" />  
-            {product.facilities[8]}</li>
+            {product.facilities[8]  || 'X'}</li>
             <li>
             <img src={lounge} alt="" />  
-            {product.facilities[9]}</li>
+            {product.facilities[9]  || 'X'}</li>
             <li>
             <img src={towels} alt="" />
-            {product.facilities[10]}</li>
+            {product.facilities[10]  || 'X'}</li>
             <li>
             <img src={bedding} alt="" />
-            {product.facilities[11]}</li>
+            {product.facilities[11]  || 'X'}</li>
             </ul>            
             </div>
                
@@ -108,6 +109,7 @@ const DetailCard = () => {
            <p>Check-in Date: {queryData?.startDate}</p>
            <p>Check-out Date {queryData?.endDate}</p>
             </div>
+            
            <h3>Total: {orderContext.orderProduct?.price}</h3>
            <Link to={`/booking-confirmation?${search}`} className='reserve-btn' id='reserve-btn' onClick={() => {
             orderContext.setOrderProduct(product)
@@ -158,23 +160,7 @@ const DetailCard = () => {
             <img src={reviews} alt="reviews" />
           </div>
         </div>
-        <div className='reservetion-card-mobile' id='reservetion-card-mobile'>
-            <div className='container-1' id='container-2'>
-           <p>2 bedrooms</p>
-           <p>2 <img src={guests} alt="" /></p>
-            </div>
-            <div className='container-2' id='container-2'>
-           <p>Check-in Date: {queryData?.startDate}</p>
-           <p>Check-out Date {queryData?.endDate}</p>
-            </div>
-           <h3>Total: {orderContext.orderProduct?.price}</h3>
-           <Link to={`/booking-confirmation?${search}`} className='reserve-btn' id='reserve-btn' onClick={() => {
-            orderContext.setOrderProduct(product)
-           }}>
-            Reserve
-           </Link>
         </div>
-      </div>
 
     )}
   </div>

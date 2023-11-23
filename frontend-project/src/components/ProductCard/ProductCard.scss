@@ -42,8 +42,6 @@ $black-text: #000000;
         color: #000000;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
         position: relative;
-        // top: 100px;
-        // right: 500px;
         background-color: #dadada;
         opacity: 80%;
         height: 50px;
@@ -81,6 +79,7 @@ $black-text: #000000;
         list-style-type: none;
         position: relative;
         right: 35px;
+        bottom: 20px;
         li{
         display: inline;
         margin-left: 10px;
@@ -89,7 +88,7 @@ $black-text: #000000;
       }
       #reviews-stars{
         position: relative;
-        bottom: 10px;
+        bottom: 40px;
         left: 10px;
         width: 200px;
         #rating{
@@ -133,7 +132,7 @@ $black-text: #000000;
 
     .view-product-btn{
         position: relative;
-        bottom: 80px;
+        bottom: 110px;
         left: 800px;
         height: 40px;
         width: 100px;
@@ -175,7 +174,7 @@ $black-text: #000000;
                 flex-direction: column;
                 justify-content: space-between;
                 position: relative;
-                left: 10px;
+                left: 26px;
                 border: solid rgb(134, 134, 134) 2px;
                 border-radius: 20px;
                 height: 350px;
@@ -184,10 +183,11 @@ $black-text: #000000;
                 position: relative;
                 bottom: 5px;
                 p{
-                    margin: 11px;
+                    margin: 3px;
                     padding: 0;
                     font-size: medium;
                     font-weight: 600;
+                    margin-left: 20px;
                 }
                 }
                 h2{
@@ -240,11 +240,15 @@ $black-text: #000000;
                 left: 5px;
                 background-color: #dadada;
                 opacity: 85%;
+                width: 85px;
+                border-radius: 10px;
                 p{
                     margin: 11px;
                     padding: 0;
                     font-size: medium;
                     font-weight: 900;
+                    width: 85px;
+                    margin-left: 3px;
                 }
               }
             }
