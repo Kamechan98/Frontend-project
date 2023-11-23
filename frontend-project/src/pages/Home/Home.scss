@@ -71,7 +71,8 @@ p{
 }
 
 #carousell{
-    margin-left: 30px;
+    width: 500px;
+    margin-left: 500px;
 }
 
 #reviews{
@@ -148,13 +149,11 @@ p{
         }
     }
     
-    #activities {
-        position: relative;
-        left: 0px;
-        display: flex;
-        flex-direction: column;
-        width: 900px;
+    #carousell{
+        width: 300px;
+        margin-left: 30px;
     }
+    
     
     #reviews{
     display: flex;

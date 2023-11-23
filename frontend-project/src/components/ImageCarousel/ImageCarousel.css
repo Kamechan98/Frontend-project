@@ -31,7 +31,7 @@
   text-align: center; /* Center the image */
 }
 .image-slide .carousel-image {
-  width: 500px; /* Set the width */
+  width: 600px; /* Set the width */
   height: 400px; /* Set the height */
   -o-object-fit: cover;
      object-fit: cover; /* Maintain aspect ratio and cover the entire area */
@@ -71,7 +71,7 @@ element.style {
     text-align: center; /* Center the image */
   }
   .image-slide .carousel-image {
-    width: 300px;
+    width: 290px;
     height: 265px;
     -o-object-fit: cover;
        object-fit: cover;
