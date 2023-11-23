@@ -1,11 +1,12 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 import './Register.scss'
 import register from './registerService';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 // RegistrationForm.tsx
 
 const RegistrationForm: React.FC = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState<User>({
     _id: '',
     firstName: '',
@@ -38,6 +39,7 @@ const RegistrationForm: React.FC = () => {
 
       // Handle successful registration (e.g., display success message)
       console.log('Registration successful:', newUser);
+      navigate('/')
 
       // Reset form and errors
       setFormData({
