@@ -34,7 +34,7 @@ const Datepicker: React.FC = () => {
         }
         
         const url =`/products?${params}`
-        console.log("URL", url)
+        // console.log("URL", url)
         navigate(url)
       }
 
@@ -65,7 +65,7 @@ const Datepicker: React.FC = () => {
         endDate={endDate}
         minDate={startDate}
         placeholderText="End Date"
-        locale="en-GB" // If you're specifying a locale
+        locale="en-GB" 
       />
       </div>
       <div className='package-dropdown-list' id='package-dropdown-list'>

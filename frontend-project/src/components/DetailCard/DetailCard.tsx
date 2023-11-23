@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import ImageCarousel from '../ImageCarousel/ImageCarousel';
 import './DetailCard.scss'
-import Review from '../Review/Review';
 import { useQuery } from '../../utils/types/hooks';
 import { useOrderContext } from '../../Context/OrderContext';
 import { useProductContext } from '../../Context/ProductContext';
@@ -20,9 +19,6 @@ import wifi from '../../assets/Wifi.svg'
 import washingMachine from '../../assets/Washing Machine.svg'
 import guests from '../../assets/guests.svg'
 import reviews from '../../assets/user-review.png'
-
-
-
 
 
 const DetailCard = () => {
