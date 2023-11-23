@@ -93,4 +93,113 @@
   margin-left: 250px;
   margin-top: 20px;
   margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 528px) {
+  #container {
+    font-family: "Lora", serif;
+    width: 315px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+  }
+  #container .Booking-info-headline {
+    background-color: #486349;
+    color: white;
+    height: 90px;
+    margin: 0;
+    border-radius: 19px;
+    width: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+  }
+  #container .booking-dates {
+    display: flex;
+  }
+  #container .booking-dates .check-in-dates,
+  #container .booking-dates .check-out-dates {
+    display: flex;
+    flex-direction: column;
+  }
+  #container .booking-dates #check-in-dates {
+    margin-left: 25px;
+  }
+  #container .booking-dates #check-out-dates {
+    margin-left: 40px;
+  }
+  #container #booking-info {
+    margin-left: 25px;
+  }
+  #container #booking-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 310px;
+  }
+  #container #booking-form #form {
+    display: flex;
+    flex-direction: column;
+    width: 40vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 20px;
+    padding-bottom: 200px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  #container #booking-form #form input {
+    background-color: #fff;
+    color: #000000;
+    border-radius: 10px;
+    height: 30px;
+    width: 80%;
+  }
+  #container #booking-form #form #form-input-phone-number {
+    margin-bottom: 20px;
+  }
+  #container #booking-form #form #form-input-adress {
+    margin-bottom: 20px;
+  }
+  #container #booking-form #form label {
+    font-size: medium;
+    color: black;
+    display: flex;
+  }
+  #container #booking-form #payment-options {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    right: 205px;
+    top: 220px;
+  }
+  #container #booking-form #payment-options #Mastercard, #container #booking-form #payment-options #Klarna, #container #booking-form #payment-options #Paypal, #container #booking-form #payment-options #Amex {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #container #booking-form #payment-options img {
+    width: 80px;
+  }
+  #container #booking-form #payment-options #radio-btn {
+    position: relative;
+    left: 65px;
+    bottom: 20px;
+  }
+  #container #confirm-btn {
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #CBB26A;
+    font-size: medium;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 8px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
 }/*# sourceMappingURL=BookingConfirm.css.map */

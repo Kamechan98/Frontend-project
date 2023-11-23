@@ -84,9 +84,92 @@ $black-text: #000000;
     }
 
     @media only screen and (max-width: 528px) {
-        // .nav-bar {
-        //     width: 100%;
-        //     height: 200px;
-        // }
+        .footer {
+            background-color: $primary-color;
+            width: 390px;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            // position: fixed;
+            // bottom: 0px;
+            .ft-container{
+                display: inline-flex;
+                line-height: normal;
+            }
+            .ft-containers{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: center;
+                margin-left: 5px;
+                margin-top: 5px;
+                width: 240px;
+                h3{
+                    color: #ffff;
+                }
+                #link{
+                    color:#CBB26A;
+                }
+                .email,
+                .phone, 
+                .adress{
+                color: #ffff;
+                display: flex;
+                margin-bottom: 40px;
+                p{
+                margin-left: 30px;
+                }
+                }
+                input{
+                    background-color: #fff;
+                    border-radius: 15px;
+                    height: 50px;
+                    width: 100%;
+                    text-align: center;
+                }
+                #newsletter-btn{
+                    background-color: #ffff;
+                    color: #000000;
+                    border-radius:15px;
+                    height: 55px;
+                    width: 40%;
+                    position: relative;
+                    bottom: 55px;
+                    left: 215px;
+                }
+                #logo-img{
+                    height: 220px;
+                    width: 340px;
+                    position: relative;
+                    top: 100px;
+                }
+            }
+            #copyright{
+                color:#CBB26A;
+                padding: 0;
+                margin: 0; 
+                width: 300px;
+            }
+        }
+        
+            #follow-us{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 220px;
+                position: relative;
+                bottom: 230px;
+                #social-medias{
+                    display: flex;
+                    flex-direction: row;
+                    align-content: space-between;
+                    img{
+                        display: flex;
+                        flex-direction: row;
+                        padding-left: 80px;
+                    }
+                }
+            }
+        
     }
     

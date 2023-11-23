@@ -109,8 +109,115 @@ $black-text: #000000;
         
 
 @media only screen and (max-width: 528px) {
-    // .nav-bar {
-    //     width: 100%;
-    //     height: 200px;
-    // }
+    #container {
+        font-family: "Lora", serif;
+        width: 315px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 20px;
+        .Booking-info-headline{
+            background-color:#486349;
+            color: #ffff;
+            height: 90px;
+            margin: 0;
+            border-radius: 19px;
+            width: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+        }
+        .booking-dates{
+            display: flex;
+            .check-in-dates,
+            .check-out-dates{
+                display: flex;
+                flex-direction: column;
+            }
+            #check-in-dates{
+                margin-left: 25px;
+            }
+            #check-out-dates{
+                margin-left: 40px;
+            }
+        }
+        #booking-info{
+            margin-left: 25px;
+        }
+    
+        #booking-form{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            width: 310px;
+            
+            #form{
+                display: flex;
+                flex-direction: column;
+                width: 40vh;
+                display: flex;
+                flex-direction: column;
+                border-radius: 10px;
+                padding: 20px;
+                padding-bottom: 200px;
+                justify-content: center;
+                align-items: flex-start;
+                input{
+                    background-color: #fff;
+                    color: #000000;
+                    border-radius: 10px;
+                    height: 30px;
+                    width: 80%;
+                }
+                #form-input-phone-number{
+                    margin-bottom: 20px;
+                }
+                #form-input-adress{
+                    margin-bottom: 20px;
+                }
+                label{
+                    font-size: medium;
+                    color: black;
+                    display: flex;
+                }
+                
+            }
+            #payment-options{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            right: 205px;
+            top: 220px;
+            #Mastercard, #Klarna, #Paypal, #Amex {
+                display: flex;
+                flex-direction: column-reverse;
+            }
+                img{
+                    width: 80px;
+                }
+                #radio-btn{
+                    position: relative;
+                    left: 65px;
+                    bottom: 20px;
+                }
+            }
+            
+        }
+        #confirm-btn{
+        height: 40px;
+        width: 300px;
+        border-radius: 10px;
+        text-align: center;
+        background-color: #CBB26A;
+        font-size: medium;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 8px;
+        margin-top: 60px;
+        margin-bottom: 20px;
+        }
+    }   
+
 }

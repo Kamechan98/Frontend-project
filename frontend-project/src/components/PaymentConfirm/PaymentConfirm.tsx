@@ -38,6 +38,11 @@ const PaymentConfirm = () => {
         <h4>{order.bookingReference || 'N/A'}</h4>
         <p>A Receipt for this transaction has been sent to this email:</p>
         <p>{userEmail}</p>
+        <br/>
+      <div className='order-img' id='order-img'>
+        <img src={order.product.imgURLs[0]} alt="img" />
+        <img src={order.product.imgURLs[3]} alt="img" />
+      </div>
       </div>
       )}
     </div>

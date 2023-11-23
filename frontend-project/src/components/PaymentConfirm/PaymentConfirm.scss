@@ -26,13 +26,50 @@ $black-text: #000000;
         align-items: center;
     }
 }
+#order-img{
+    // height: 415px;
+    width: 300px;
+    img{
+        height: 400px;
+    }
+}
 
 
 @media only screen and (max-width: 528px) {
     // .nav-bar {
-    //     width: 100%;
+    //     width: 330px;
     //     height: 200px;
     // }
+
+    .container{
+        width: 330px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 30px;
+        .headline{
+            background-color: #486349;
+            height: 90px;
+            margin: 0;
+            border-radius: 19px;
+            width: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .payment{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    #order-img{
+        width: 300px;
+        img{
+            height: 200px;
+        }
+    }
+
 }
 
 
