@@ -122,17 +122,17 @@ const DetailCard = () => {
             <h3>Included in the package</h3>
             <div className='container-1'>
             <ul>
-            <li>{product.amenities[0]}</li>
-            <li>{product.amenities[1]}</li>
-            <li>{product.amenities[2]}</li>
-            <li>{product.amenities[3]}</li>
+            <li>{product.amenities[0]  || 'X'}</li>
+            <li>{product.amenities[1]  || 'X'}</li>
+            <li>{product.amenities[2]  || 'X'}</li>
+            <li>{product.amenities[3]  || 'X'}</li>
             </ul>
             </div>
             <div className='container-2'>
             <ul>
-            <li>{product.amenities[4]}</li>
-            <li>{product.amenities[5]}</li>
-            <li>{product.amenities[6]}</li>
+            <li>{product.amenities[4]  || 'X'}</li>
+            <li>{product.amenities[5]  || 'X'}</li>
+            <li>{product.amenities[6]  || 'X'}</li>
             </ul>            
 
             </div>

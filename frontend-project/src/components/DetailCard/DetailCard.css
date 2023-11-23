@@ -120,16 +120,14 @@
   #detail-card #amenities-card .container-2 {
     position: relative;
     left: 190px;
-    bottom: 287px;
+    bottom: 240px;
     width: 20px;
   }
   #detail-card #amenities-card ul {
     width: 200px;
   }
   #detail-card #amenities-card ul li {
-    display: flex;
     margin-left: 10px;
-    align-items: center;
     padding: 15px;
     width: 120px;
     font-size: 15px;
