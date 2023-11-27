@@ -6,7 +6,6 @@ import AmericanExpress from '../../assets/AmericanExpress.jpg';
 import './BookingConfirm.scss'
 import { useOrderContext } from '../../Context/OrderContext';
 import { useProductContext } from '../../Context/ProductContext';
-// import { useUserContext } from '../../Context/UserContext';
 import { useQuery } from '../../utils/types/hooks';
 import { useNavigate } from 'react-router-dom';
 
@@ -38,7 +37,6 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
     const  [search, queryData] = useQuery();
     const orderContext = useOrderContext();
     const productContext = useProductContext();
-    // const userContext = useUserContext();
 
     const [newOrder, setNewOrder] = useState({
         product: '', 
@@ -89,19 +87,7 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
           }));
         }
       }, [orderContext.orderProduct, productContext.product, queryData.startDate, queryData.endDate]);
-      
-    
-    // console.log("QUERY", queryData)
-    // console.log("ORDER PRODUCT", orderContext.orderProduct)
-    // console.log('Product Context:', productContext);
-    console.log("Product", productContext.product?.name)
 
-      
-    // useEffect(() => {
-    //   console.log('User:', userContext.user);
-    // }, [userContext.user]);
-
-    // console.log("USER", userContext.user)
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const value = e.target.type === 'checkbox' ? (e.target as HTMLInputElement).checked : e.target.value
@@ -114,7 +100,6 @@ const BookingConfirm: React.FC<BookingConfirmProps> = () => {
       };
 
       const handleConfirmBooking = async () => {
-        // return console.log("newOrder", newOrder)
         orderContext.createOrder(newOrder as any, navigate)
       };
 

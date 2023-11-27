@@ -133,7 +133,6 @@ const DetailCard = () => {
 
             </div>
         </div>
-        {/* Display other product details */}
         <div className='user-reviews' id='user-reviews'>
           <div className='user-review' id='user-review'>
             <img src={reviews} alt="reviews" />

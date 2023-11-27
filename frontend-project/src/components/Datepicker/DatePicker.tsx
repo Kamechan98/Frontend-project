@@ -51,7 +51,7 @@ const Datepicker: React.FC = () => {
         startDate={startDate}
         endDate={endDate}
         placeholderText="Start Date"
-        locale="en-GB" // If you're specifying a locale
+        locale="en-GB" 
       />
       </div>
 
